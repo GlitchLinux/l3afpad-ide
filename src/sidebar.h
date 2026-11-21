@@ -22,6 +22,9 @@ GtkWidget *sidebar_create(GtkWidget *editor_view);
 /* Toggle sidebar visibility (wired to the File/Files menu). */
 void sidebar_toggle(void);
 
+/* window.c registers the GtkPaned the sidebar lives in. */
+void sidebar_set_paned(GtkWidget *paned);
+
 /* Returns TRUE if the sidebar is currently visible. */
 gboolean sidebar_is_visible(void);
 

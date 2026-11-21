@@ -23,8 +23,14 @@ enum {
 	N_COLS
 };
 
+/* Fixed sidebar width. Toggling grows/shrinks the window by this much
+ * (plus the paned handle) so the editor keeps its size and the sidebar
+ * extends outward to the left instead of eating into the editor. */
+#define SIDEBAR_WIDTH 220
+
 /* Module-global widgets (single-window app, mirrors colors.c style). */
 static GtkWidget   *sidebar_box   = NULL;  /* top container in the paned */
+static GtkWidget   *sidebar_paned = NULL;  /* the GtkPaned we live in    */
 static GtkWidget   *tree_view     = NULL;
 static GtkListStore *store        = NULL;
 static GtkWidget   *root_label    = NULL;
@@ -244,7 +250,7 @@ GtkWidget *sidebar_create(GtkWidget *editor_view)
 	editor = editor_view;
 
 	sidebar_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
-	gtk_widget_set_size_request(sidebar_box, 200, -1);
+	gtk_widget_set_size_request(sidebar_box, SIDEBAR_WIDTH, -1);
 
 	/* --- header row: file actions (reuse existing callbacks) --- */
 	header = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
@@ -316,15 +322,48 @@ GtkWidget *sidebar_create(GtkWidget *editor_view)
 	return sidebar_box;
 }
 
+/* Called by window.c after it builds the GtkPaned. */
+void sidebar_set_paned(GtkWidget *paned)
+{
+	sidebar_paned = paned;
+}
+
+/* Width taken by the sidebar including the paned divider handle. */
+static gint sidebar_total_width(void)
+{
+	gint handle = 0;
+	if (sidebar_paned)
+		gtk_widget_style_get(sidebar_paned,
+			"handle-size", &handle, NULL);
+	return SIDEBAR_WIDTH + handle;
+}
+
 void sidebar_toggle(void)
 {
-	if (!sidebar_box)
+	GtkWidget *win;
+	gint w, h, delta;
+
+	if (!sidebar_box || !pub || !pub->mw)
 		return;
+
+	win   = pub->mw->window;
+	delta = sidebar_total_width();
+	gtk_window_get_size(GTK_WINDOW(win), &w, &h);
+
 	if (gtk_widget_get_visible(sidebar_box)) {
+		/* hide: shrink the window back by the sidebar width */
 		gtk_widget_hide(sidebar_box);
+		gtk_window_resize(GTK_WINDOW(win),
+			(w - delta > 1) ? w - delta : 1, h);
 	} else {
+		/* show: grow the window so the editor keeps its width and the
+		 * sidebar extends outward to the left */
 		gtk_widget_show(sidebar_box);
 		gtk_widget_show_all(sidebar_box);
+		gtk_window_resize(GTK_WINDOW(win), w + delta, h);
+		if (sidebar_paned)
+			gtk_paned_set_position(GTK_PANED(sidebar_paned),
+				SIDEBAR_WIDTH);
 	}
 }
 

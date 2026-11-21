@@ -68,6 +68,7 @@ MainWin *create_main_window(void)
 
 	/* sidebar on the left (hidden until toggled), editor on the right */
 	sidebar = sidebar_create(mw->view);
+	sidebar_set_paned(paned);
 	gtk_paned_pack1(GTK_PANED(paned), sidebar, FALSE, FALSE);
 	gtk_paned_pack2(GTK_PANED(paned), sw, TRUE, FALSE);
 
