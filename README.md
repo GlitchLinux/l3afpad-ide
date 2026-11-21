@@ -1,6 +1,6 @@
 # l3afpad-ide
 
-<img width="1236" height="1091" alt="714649528-85073e96-9cf4-4971-8c05-6656ab13d672" src="https://github.com/user-attachments/assets/2bfd64c3-7656-49ce-b0e1-04de293e44e4" />
+<img width="1236" height="1091" alt="714649528-85073e96-9cf4-4971-8c05-6656ab13d672" src="https://github.com/user-attachments/assets/35c605d5-a3e0-4d1c-8733-ff4326c008e1" />
 
 ---
 
