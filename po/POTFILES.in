@@ -1,5 +1,6 @@
 src/main.c
 src/window.c
+src/sidebar.c
 src/menu.c
 src/callback.c
 src/view.c
