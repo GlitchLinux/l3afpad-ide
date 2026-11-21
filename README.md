@@ -2,9 +2,7 @@
 
 <img width="1236" height="1273" alt="l3afpad-ide-repo" src="https://github.com/user-attachments/assets/85073e96-9cf4-4971-8c05-6656ab13d672" />
 
-A lightweight GTK+3 text editor that grew into a small, fast IDE - without
-losing what made l3afpad pleasant: it starts instantly and stays out of your
-way.
+---
 
 This is a fork of [l3afpad](https://github.com/stevenhoneyman/l3afpad)
 (itself a GTK3 fork of [Leafpad](http://tarot.freeshell.org/leafpad/)) that
