@@ -62,3 +62,6 @@ The package installs as a drop-in `l3afpad` binary.
 
 GPL-2.0, same as the upstream editor. See [COPYING](COPYING). The bundled
 rainglow themes are MIT licensed by their author.
+
+<img width="849" height="927" alt="l3afpad-REMASTER-reze" src="https://github.com/user-attachments/assets/4901a6ef-9fe1-4dea-8d75-9f203753f7dc" />
+
