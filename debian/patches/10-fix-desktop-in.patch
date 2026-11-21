@@ -1,0 +1,14 @@
+Description: Fix leafpad.desktop.in add Keywords
+Author: Paulo Roberto Alves de Oliveira (aka kretcheu) <kretcheu@gmail.com>
+Forwarded: https://github.com/stevenhoneyman/l3afpad/pull/32
+Last-update: 2021-10-25
+Index: l3afpad/data/l3afpad.desktop.in
+===================================================================
+--- l3afpad.orig/data/l3afpad.desktop.in
++++ l3afpad/data/l3afpad.desktop.in
+@@ -7,3 +7,5 @@ Terminal=false
+ Type=Application
+ MimeType=text/plain;
+ Categories=GTK;Utility;TextEditor;
++Keywords=text;editor;
++InitialPreference=6;

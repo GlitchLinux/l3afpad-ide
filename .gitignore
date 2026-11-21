@@ -1,0 +1,26 @@
+# autotools
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/
+config.h
+config.h.in
+config.log
+config.status
+configure
+depcomp
+install-sh
+missing
+mkinstalldirs
+stamp-h1
+intltool-*.in
+intltool-*
+po/*.gmo
+po/*.mo
+po/stamp-it
+po/.intltool-merge-cache*
+po/Makefile.in.in
+po/POTFILES
+# build objects
+*.o
+src/l3afpad

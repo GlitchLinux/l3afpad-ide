@@ -1,0 +1,26 @@
+l3afpad (0.8.18.1.11-4) unstable; urgency=medium
+
+  * debian/watch: fix url to https://github.com/stevenhoneyman/l3afpad/tags.
+
+ -- Paulo Roberto Alves de Oliveira (aka kretcheu) <kretcheu@gmail.com>  Sat, 22 Oct 2022 09:43:00 -0300
+
+l3afpad (0.8.18.1.11-3) unstable; urgency=medium
+
+  * d/rules: Remove -pie and -fPIE from compiler option.
+    Disables checking for PIE which is automatically applied by Debian's GCC
+    and no longer requires a compiler command line argument.
+
+ -- Paulo Roberto Alves de Oliveira (aka kretcheu) <kretcheu@gmail.com>  Wed, 09 Feb 2022 12:04:00 -0300
+
+l3afpad (0.8.18.1.11-2) unstable; urgency=medium
+
+  * d/rules: add the DEB_CFLAGS_MAINT_APPEND.
+  * d/copyright: Update copyright years.
+
+ -- Paulo Roberto Alves de Oliveira (aka kretcheu) <kretcheu@gmail.com>  Mon, 10 Jan 2022 17:26:00 -0300
+
+l3afpad (0.8.18.1.11-1) unstable; urgency=medium
+
+  * Initial release (Closes: #906013)
+
+ -- Paulo Roberto Alves de Oliveira (aka kretcheu) <kretcheu@gmail.com>  Tue, 12 Oct 2021 13:03:00 -0300
