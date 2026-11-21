@@ -1,5 +1,7 @@
 # l3afpad-ide
 
+<img width="1236" height="1273" alt="l3afpad-ide-repo" src="https://github.com/user-attachments/assets/85073e96-9cf4-4971-8c05-6656ab13d672" />
+
 A lightweight GTK+3 text editor that grew into a small, fast IDE - without
 losing what made l3afpad pleasant: it starts instantly and stays out of your
 way.
@@ -62,6 +64,3 @@ The package installs as a drop-in `l3afpad` binary.
 
 GPL-2.0, same as the upstream editor. See [COPYING](COPYING). The bundled
 rainglow themes are MIT licensed by their author.
-
-<img width="849" height="927" alt="l3afpad-REMASTER-reze" src="https://github.com/user-attachments/assets/4901a6ef-9fe1-4dea-8d75-9f203753f7dc" />
-
