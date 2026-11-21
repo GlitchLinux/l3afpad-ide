@@ -29,22 +29,56 @@ static gchar       *cur_name     = NULL;
 /* ------------------------------------------------------------------ */
 static gchar *find_table(void)
 {
-	/* Search order: env override, install dir, alongside the binary,
-	 * then the source tree (so it works before `make install`). */
 	const gchar *env = g_getenv("L3AFPAD_THEMES");
-	const gchar *candidates[] = {
-		env,
-		PKGDATADIR "/themes.tsv",
-		"/usr/share/l3afpad/themes.tsv",
-		"/usr/local/share/l3afpad/themes.tsv",
-		"data/themes.tsv",
-		"../data/themes.tsv",
-		NULL
-	};
+	gchar *exe = NULL, *exedir = NULL, *p;
+	gchar *cand;
 	gint i;
-	for (i = 0; candidates[i]; i++)
-		if (candidates[i] && g_file_test(candidates[i], G_FILE_TEST_IS_REGULAR))
-			return g_strdup(candidates[i]);
+
+	/* 1) explicit override */
+	if (env && g_file_test(env, G_FILE_TEST_IS_REGULAR))
+		return g_strdup(env);
+
+	/* 2) relative to the executable, so cwd does not matter.
+	 *    installed:  <exedir>/../share/l3afpad/themes.tsv
+	 *    source:     <exedir>/../data/themes.tsv   (src/l3afpad -> ../data) */
+	exe = g_file_read_link("/proc/self/exe", NULL);
+	if (exe) {
+		exedir = g_path_get_dirname(exe);
+		const gchar *rel[] = {
+			"../share/l3afpad/themes.tsv",
+			"../data/themes.tsv",
+			"data/themes.tsv",
+			NULL
+		};
+		for (i = 0; rel[i]; i++) {
+			cand = g_build_filename(exedir, rel[i], NULL);
+			if (g_file_test(cand, G_FILE_TEST_IS_REGULAR)) {
+				g_free(exe); g_free(exedir);
+				return cand;
+			}
+			g_free(cand);
+		}
+		g_free(exe); g_free(exedir);
+	}
+
+	/* 3) fixed install locations */
+	{
+		const gchar *fixed[] = {
+			PKGDATADIR "/themes.tsv",
+			"/usr/share/l3afpad/themes.tsv",
+			"/usr/local/share/l3afpad/themes.tsv",
+			NULL
+		};
+		for (i = 0; fixed[i]; i++)
+			if (g_file_test(fixed[i], G_FILE_TEST_IS_REGULAR))
+				return g_strdup(fixed[i]);
+	}
+
+	/* 4) last resort: cwd-relative */
+	if (g_file_test("data/themes.tsv", G_FILE_TEST_IS_REGULAR))
+		return g_strdup("data/themes.tsv");
+
+	(void)p;
 	return NULL;
 }
 
