@@ -22,7 +22,9 @@ typedef struct {
 static GArray      *themes       = NULL;  /* array of Theme */
 static GtkWidget   *theme_editor = NULL;  /* the GtkTextView */
 static GtkCssProvider *provider  = NULL;
-static gchar       *cur_name     = NULL;
+static gchar       *cur_name     = NULL;  /* committed (persisted) theme   */
+static gchar       *saved_name   = NULL;  /* theme active when menu opened */
+static gboolean     committed_in_menu = FALSE;
 
 /* ------------------------------------------------------------------ */
 /* Load the table                                                     */
@@ -131,7 +133,23 @@ gint theme_load_table(void)
 /* ------------------------------------------------------------------ */
 /* Apply colors via CSS                                               */
 /* ------------------------------------------------------------------ */
-static void apply_theme(const Theme *t)
+/* Find a theme by name (internal). */
+static const Theme *theme_find(const gchar *name)
+{
+	guint i;
+	if (!themes || !name)
+		return NULL;
+	for (i = 0; i < themes->len; i++) {
+		Theme *t = &g_array_index(themes, Theme, i);
+		if (strcmp(t->name, name) == 0)
+			return t;
+	}
+	return NULL;
+}
+
+/* Visually apply colors only (does not change cur_name). Pass NULL to
+ * remove the provider and restore the default GTK colors. */
+static void apply_colors(const Theme *t)
 {
 	gchar *css;
 	GtkStyleContext *ctx;
@@ -139,11 +157,26 @@ static void apply_theme(const Theme *t)
 	if (!theme_editor)
 		return;
 
-	if (!provider)
-		provider = gtk_css_provider_new();
+	ctx = gtk_widget_get_style_context(theme_editor);
 
-	/* Target the text view and its text; keep it minimal so we don't
-	 * fight the user's GTK theme beyond the editor area. */
+	if (!t) {
+		/* restore default: drop our provider */
+		if (provider) {
+			gtk_style_context_remove_provider(ctx,
+				GTK_STYLE_PROVIDER(provider));
+			g_object_unref(provider);
+			provider = NULL;
+		}
+		return;
+	}
+
+	if (!provider) {
+		provider = gtk_css_provider_new();
+		gtk_style_context_add_provider(ctx,
+			GTK_STYLE_PROVIDER(provider),
+			GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	}
+
 	css = g_strdup_printf(
 		"textview, textview text {"
 		"  background-color: %s;"
@@ -155,32 +188,25 @@ static void apply_theme(const Theme *t)
 		"  color: %s;"
 		"}",
 		t->bg, t->fg, t->caret, t->sel, t->fg);
-
 	gtk_css_provider_load_from_data(provider, css, -1, NULL);
 	g_free(css);
+}
 
-	ctx = gtk_widget_get_style_context(theme_editor);
-	gtk_style_context_add_provider(ctx,
-		GTK_STYLE_PROVIDER(provider),
-		GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-
+/* Commit a theme: apply it and remember it as the persisted choice. */
+static void apply_theme(const Theme *t)
+{
+	apply_colors(t);
 	g_free(cur_name);
-	cur_name = g_strdup(t->name);
+	cur_name = t ? g_strdup(t->name) : NULL;
 }
 
 gboolean theme_apply_by_name(const gchar *name)
 {
-	guint i;
-	if (!themes || !name)
+	const Theme *t = theme_find(name);
+	if (!t)
 		return FALSE;
-	for (i = 0; i < themes->len; i++) {
-		Theme *t = &g_array_index(themes, Theme, i);
-		if (strcmp(t->name, name) == 0) {
-			apply_theme(t);
-			return TRUE;
-		}
-	}
-	return FALSE;
+	apply_theme(t);
+	return TRUE;
 }
 
 const gchar *theme_current(void)
@@ -191,10 +217,53 @@ const gchar *theme_current(void)
 /* ------------------------------------------------------------------ */
 /* Menu                                                               */
 /* ------------------------------------------------------------------ */
+/* Hover a theme item: preview its colors (not committed). */
+static void on_theme_select(GtkMenuItem *item, gpointer data)
+{
+	const Theme *t = data;
+	apply_colors(t);
+}
+
+/* Click a theme item: commit it as the chosen theme. */
 static void on_theme_item(GtkMenuItem *item, gpointer data)
 {
 	const Theme *t = data;
 	apply_theme(t);
+	committed_in_menu = TRUE;
+}
+
+/* The "Default" item: clear any theme and restore default colors. */
+static void on_theme_default_select(GtkMenuItem *item, gpointer data)
+{
+	apply_colors(NULL);          /* preview the default look */
+}
+static void on_theme_default(GtkMenuItem *item, gpointer data)
+{
+	apply_theme(NULL);           /* commit "no theme" */
+	committed_in_menu = TRUE;
+}
+
+/* Menu opened: remember the committed theme so we can revert if the user
+ * only browses (previews) without clicking. */
+static void on_root_menu_show(GtkWidget *w, gpointer data)
+{
+	g_free(saved_name);
+	saved_name = cur_name ? g_strdup(cur_name) : NULL;
+	committed_in_menu = FALSE;
+}
+
+/* Menu closed: if nothing was committed, revert to the theme that was
+ * active when the menu opened (undo the hover previews). */
+static void on_root_menu_hide(GtkWidget *w, gpointer data)
+{
+	if (committed_in_menu)
+		return;
+	if (saved_name) {
+		const Theme *t = theme_find(saved_name);
+		apply_colors(t);         /* restore previewed-away theme */
+	} else {
+		apply_colors(NULL);      /* was default */
+	}
 }
 
 void theme_set_view(GtkWidget *editor_view)
@@ -215,6 +284,26 @@ GtkWidget *theme_build_menu(GtkWidget *editor_view)
 	themes_item = gtk_menu_item_new_with_mnemonic(_("_Themes"));
 	root_menu   = gtk_menu_new();
 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(themes_item), root_menu);
+
+	/* Default (no theme) entry at the very top */
+	{
+		GtkWidget *mi_default = gtk_menu_item_new_with_label(_("Default"));
+		g_signal_connect(mi_default, "select",
+			G_CALLBACK(on_theme_default_select), NULL);
+		g_signal_connect(mi_default, "activate",
+			G_CALLBACK(on_theme_default), NULL);
+		gtk_menu_shell_append(GTK_MENU_SHELL(root_menu), mi_default);
+		gtk_widget_show(mi_default);
+		GtkWidget *sep = gtk_separator_menu_item_new();
+		gtk_menu_shell_append(GTK_MENU_SHELL(root_menu), sep);
+		gtk_widget_show(sep);
+	}
+
+	/* revert previews if the menu is closed without a click */
+	g_signal_connect(root_menu, "show",
+		G_CALLBACK(on_root_menu_show), NULL);
+	g_signal_connect(root_menu, "hide",
+		G_CALLBACK(on_root_menu_hide), NULL);
 
 	sub_dark     = gtk_menu_new();
 	sub_light    = gtk_menu_new();
@@ -241,6 +330,8 @@ GtkWidget *theme_build_menu(GtkWidget *editor_view)
 			target = sub_light;
 		else if (strcmp(t->group, "Contrast") == 0)
 			target = sub_contrast;
+		g_signal_connect(it, "select",
+			G_CALLBACK(on_theme_select), t);
 		g_signal_connect(it, "activate",
 			G_CALLBACK(on_theme_item), t);
 		gtk_menu_shell_append(GTK_MENU_SHELL(target), it);
