@@ -50,6 +50,7 @@
 
 #include "window.h"
 #include "sidebar.h"
+#include "theme.h"
 #include "menu.h"
 #include "callback.h"
 #include "view.h"

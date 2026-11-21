@@ -1,11 +1,12 @@
 bin_PROGRAMS = l3afpad
 
-AM_CPPFLAGS = -DICONDIR=\"$(datadir)/pixmaps\"
+AM_CPPFLAGS = -DICONDIR=\"$(datadir)/pixmaps\" -DPKGDATADIR=\"$(datadir)/l3afpad\"
 
 l3afpad_SOURCES = \
 	l3afpad.h main.c \
 	window.h window.c \
 	sidebar.h sidebar.c \
+	theme.h theme.c \
 	menu.h menu.c \
 	callback.h callback.c \
 	view.h view.c \

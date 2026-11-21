@@ -7,3 +7,6 @@ desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
 
 pixmapsdir       = $(datadir)/pixmaps
 pixmaps_DATA     = l3afpad.png l3afpad.xpm
+
+pkgdatadir       = $(datadir)/l3afpad
+pkgdata_DATA     = themes.tsv

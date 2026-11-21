@@ -48,7 +48,14 @@ MainWin *create_main_window(void)
 	gtk_container_add(GTK_CONTAINER(mw->window), vbox);
 
 	mw->menubar = create_menu_bar(mw->window);
-	gtk_box_pack_start(GTK_BOX(vbox), gtk_ui_manager_get_widget(mw->menubar, "/M"), FALSE, FALSE, 0);
+	{
+		GtkWidget *mbar = gtk_ui_manager_get_widget(mw->menubar, "/M");
+		gtk_box_pack_start(GTK_BOX(vbox), mbar, FALSE, FALSE, 0);
+		/* Themes menu on the far right of the menubar */
+		theme_load_table();
+		gtk_menu_shell_append(GTK_MENU_SHELL(mbar),
+			theme_build_menu(NULL)); /* view set below */
+	}
 
 	/* horizontal paned: [ sidebar | editor ] */
 	paned = gtk_paned_new(GTK_ORIENTATION_HORIZONTAL);
@@ -65,6 +72,7 @@ MainWin *create_main_window(void)
 	mw->view = create_text_view();
 	gtk_container_add(GTK_CONTAINER(sw), mw->view);
 	mw->buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(mw->view));
+	theme_set_view(mw->view);
 
 	/* sidebar on the left (hidden until toggled), editor on the right */
 	sidebar = sidebar_create(mw->view);
