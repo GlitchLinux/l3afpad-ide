@@ -49,6 +49,9 @@ EOF
       mv /tmp/newch debian/changelog
     }
 
+# debhelper config files must not be executable unless real scripts
+find debian -maxdepth 1 -type f ! -name rules -exec chmod -x {} + 2>/dev/null || true
+
 # --- build (unsigned binary-only package) ---
 dpkg-buildpackage -us -uc -b 2>&1 | tail -25
 
