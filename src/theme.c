@@ -213,6 +213,10 @@ GtkWidget *theme_build_menu(GtkWidget *editor_view)
 		gtk_widget_show(it);
 	}
 
+	gtk_widget_show_all(sub_dark);
+	gtk_widget_show_all(sub_light);
+	gtk_widget_show_all(sub_contrast);
+	gtk_widget_show_all(root_menu);
 	gtk_widget_show_all(themes_item);
 	return themes_item;
 }
