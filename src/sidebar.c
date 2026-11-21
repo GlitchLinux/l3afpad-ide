@@ -270,15 +270,31 @@ static void on_btn_refresh(GtkButton *b, gpointer d)  { sidebar_populate(); }
 /* ------------------------------------------------------------------ */
 /* Construction                                                       */
 /* ------------------------------------------------------------------ */
-static GtkWidget *make_icon_button(const gchar *icon_name,
+/* label is a short text fallback shown when the icon theme lacks icon_name
+ * (e.g. a minimal environment with no symbolic icons installed). */
+static GtkWidget *make_icon_button2(const gchar *icon_name, const gchar *label,
 	const gchar *tooltip, GCallback cb)
 {
-	GtkWidget *btn = gtk_button_new_from_icon_name(icon_name,
-		GTK_ICON_SIZE_SMALL_TOOLBAR);
+	GtkWidget *btn;
+	GtkIconTheme *theme = gtk_icon_theme_get_default();
+
+	if (theme && gtk_icon_theme_has_icon(theme, icon_name)) {
+		btn = gtk_button_new_from_icon_name(icon_name,
+			GTK_ICON_SIZE_SMALL_TOOLBAR);
+	} else {
+		/* no such icon -> use text so the control is still visible */
+		btn = gtk_button_new_with_label(label);
+	}
 	gtk_widget_set_tooltip_text(btn, tooltip);
 	gtk_button_set_relief(GTK_BUTTON(btn), GTK_RELIEF_NONE);
 	g_signal_connect(btn, "clicked", cb, NULL);
 	return btn;
+}
+
+static GtkWidget *make_icon_button(const gchar *icon_name,
+	const gchar *tooltip, GCallback cb)
+{
+	return make_icon_button2(icon_name, tooltip, tooltip, cb);
 }
 
 GtkWidget *sidebar_create(GtkWidget *editor_view)
@@ -358,8 +374,19 @@ GtkWidget *sidebar_create(GtkWidget *editor_view)
 	gtk_widget_set_vexpand(sw, TRUE);
 	gtk_box_pack_start(GTK_BOX(sidebar_box), sw, TRUE, TRUE, 0);
 
-	/* hidden until toggled on */
+	/* Show all children now so they are ready; keep the box itself hidden
+	 * until toggled. We do NOT use no_show_all (it would stop show_all from
+	 * recursing into the children and leave an empty panel). Instead the
+	 * window's startup show_all is run before we hide the box: see below.
+	 * To guarantee the box starts hidden regardless of startup order, the
+	 * toggle shows/hides only the box; children are already visible. */
+	/* Show the children now, then hide only the top box. The window's
+	 * startup show_all must NOT re-reveal the box, so mark it no_show_all;
+	 * the toggle clears that flag before calling show_all so the children
+	 * (already shown) become visible together with the box. */
+	gtk_widget_show_all(sidebar_box);
 	gtk_widget_set_no_show_all(sidebar_box, TRUE);
+	gtk_widget_hide(sidebar_box);
 
 	return sidebar_box;
 }
@@ -399,8 +426,9 @@ void sidebar_toggle(void)
 			(w - delta > 1) ? w - delta : 1, h);
 	} else {
 		/* show: grow the window so the editor keeps its width and the
-		 * sidebar extends outward to the left */
-		gtk_widget_show(sidebar_box);
+		 * sidebar extends outward to the left. Children were already
+		 * shown at creation, so just reveal the box. */
+		gtk_widget_set_no_show_all(sidebar_box, FALSE);
 		gtk_widget_show_all(sidebar_box);
 		gtk_window_resize(GTK_WINDOW(win), w + delta, h);
 		if (sidebar_paned)
