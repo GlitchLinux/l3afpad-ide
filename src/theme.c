@@ -195,6 +195,9 @@ GtkWidget *theme_build_menu(GtkWidget *editor_view)
 	gtk_menu_shell_append(GTK_MENU_SHELL(root_menu), mi_dark);
 	gtk_menu_shell_append(GTK_MENU_SHELL(root_menu), mi_light);
 	gtk_menu_shell_append(GTK_MENU_SHELL(root_menu), mi_contrast);
+	gtk_widget_show(mi_dark);
+	gtk_widget_show(mi_light);
+	gtk_widget_show(mi_contrast);
 
 	for (i = 0; themes && i < themes->len; i++) {
 		Theme *t = &g_array_index(themes, Theme, i);
@@ -207,6 +210,7 @@ GtkWidget *theme_build_menu(GtkWidget *editor_view)
 		g_signal_connect(it, "activate",
 			G_CALLBACK(on_theme_item), t);
 		gtk_menu_shell_append(GTK_MENU_SHELL(target), it);
+		gtk_widget_show(it);
 	}
 
 	gtk_widget_show_all(themes_item);

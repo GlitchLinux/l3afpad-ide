@@ -31,4 +31,7 @@ gboolean sidebar_is_visible(void);
 /* Set the browse root and (re)populate the flat file list. */
 void sidebar_set_root(const gchar *path);
 
+/* Current browse root, or NULL. */
+const gchar *sidebar_get_root(void);
+
 #endif /* _SIDEBAR_H */

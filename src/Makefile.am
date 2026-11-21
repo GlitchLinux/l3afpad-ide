@@ -7,6 +7,7 @@ l3afpad_SOURCES = \
 	window.h window.c \
 	sidebar.h sidebar.c \
 	theme.h theme.c \
+	settings.h settings.c \
 	menu.h menu.c \
 	callback.h callback.c \
 	view.h view.c \
@@ -26,5 +27,5 @@ l3afpad_SOURCES = \
 	emacs.h emacs.c \
 	gtksourceiter.h gtksourceiter.c
 
-l3afpad_CFLAGS  = $(GTK_CFLAGS)
-l3afpad_LDADD   = $(GTK_LIBS) $(INTLLIBS)
+l3afpad_CFLAGS  = $(GTK_CFLAGS) $(JSON_CFLAGS)
+l3afpad_LDADD   = $(GTK_LIBS) $(JSON_LIBS) $(INTLLIBS)

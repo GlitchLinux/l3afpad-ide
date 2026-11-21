@@ -51,6 +51,7 @@
 #include "window.h"
 #include "sidebar.h"
 #include "theme.h"
+#include "settings.h"
 #include "menu.h"
 #include "callback.h"
 #include "view.h"
@@ -79,6 +80,7 @@ typedef struct {
 extern PublicData *pub;
 #endif
 
+extern Settings app_settings;
 void save_config_file(void);
 
 #endif /* _L3AFPAD_H */

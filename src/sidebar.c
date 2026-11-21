@@ -213,6 +213,11 @@ void sidebar_set_root(const gchar *path)
 	sidebar_populate();
 }
 
+const gchar *sidebar_get_root(void)
+{
+	return current_root;
+}
+
 /* ------------------------------------------------------------------ */
 /* Signal handlers                                                    */
 /* ------------------------------------------------------------------ */

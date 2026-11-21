@@ -25,98 +25,39 @@
 #include <string.h>
 
 PublicData *pub;
+Settings app_settings;
 
-typedef struct {
-	gint width;
-	gint height;
-	gchar *fontname;
-	gboolean wordwrap;
-	gboolean linenumbers;
-	gboolean autoindent;
-	gint tabwidth;
-} Conf;
+/* Settings are persisted as JSON in ~/.config/l3afpad/l3afpad.json
+ * via the settings module. save_config_file() keeps its name because it
+ * is called from the quit path and elsewhere. */
 
-static void load_config_file(Conf *conf)
+static gboolean opt_get(GtkUIManager *ui, const gchar *path)
 {
-	FILE *fp;
-	gchar *path;
-	gchar buf[BUFSIZ];
-	gchar **num;
-
-	path = g_build_filename(g_get_user_config_dir(),
-	    PACKAGE, PACKAGE "rc", NULL);
-	fp = fopen(path, "r");
-	g_free(path);
-	if (!fp)
-		return;
-
-	if (fgets(buf, sizeof(buf), fp)) {
-		num = g_strsplit(buf, "." , 3);
-		if ((atoi(num[1]) >= 8) && (atoi(num[2]) >= 0)) {
-			fgets(buf, sizeof(buf), fp);
-			conf->width = atoi(buf);
-			fgets(buf, sizeof(buf), fp);
-			conf->height = atoi(buf);
-			fgets(buf, sizeof(buf), fp);
-			g_free(conf->fontname);
-			conf->fontname = g_strdup(buf);
-			fgets(buf, sizeof(buf), fp);
-			conf->wordwrap = atoi(buf);
-			fgets(buf, sizeof(buf), fp);
-			conf->linenumbers = atoi(buf);
-			fgets(buf, sizeof(buf), fp);
-			conf->autoindent = atoi(buf);
-			fgets(buf, sizeof(buf), fp);
-			conf->tabwidth = atoi(buf) > 0 ? atoi(buf) : get_current_tab_width();
-		}
-		g_strfreev(num);
-	}
-	fclose(fp);
+	return gtk_toggle_action_get_active(
+		GTK_TOGGLE_ACTION(gtk_ui_manager_get_action(ui, path)));
 }
 
 void save_config_file(void)
 {
-	FILE *fp;
-	gchar *path;
-	gint width, height, tabwidth;
+	Settings s;
 	gchar *fontname;
-	gboolean wordwrap, linenumbers, autoindent;
 
-	gtk_window_get_size(GTK_WINDOW(pub->mw->window), &width, &height);
-	fontname = pango_font_description_to_string(gtk_style_context_get_font(gtk_widget_get_style_context(pub->mw->view), 0));
-	wordwrap = gtk_toggle_action_get_active(
-		GTK_TOGGLE_ACTION(gtk_ui_manager_get_action(pub->mw->menubar,
-			"/M/Options/WordWrap")));
-	linenumbers = gtk_toggle_action_get_active(
-		GTK_TOGGLE_ACTION(gtk_ui_manager_get_action(pub->mw->menubar,
-			"/M/Options/LineNumbers")));
-	autoindent = gtk_toggle_action_get_active(
-		GTK_TOGGLE_ACTION(gtk_ui_manager_get_action(pub->mw->menubar,
-			"/M/Options/AutoIndent")));
-	tabwidth = get_current_tab_width();
+	memset(&s, 0, sizeof(s));
 
-	path = g_build_filename(g_get_user_config_dir(), PACKAGE, NULL);
-	if (!g_file_test(path, G_FILE_TEST_IS_DIR))
-		g_mkdir_with_parents(path, 0700);
-	g_free(path);
-	path = g_build_filename(g_get_user_config_dir(),
-	    PACKAGE, PACKAGE "rc", NULL);
-	fp = fopen(path, "w");
-	if (!fp) {
-		g_print("%s: can't save config file - %s\n", PACKAGE, path);
-		return;
-	}
-	g_free(path);
+	gtk_window_get_size(GTK_WINDOW(pub->mw->window), &s.width, &s.height);
+	fontname = pango_font_description_to_string(
+		gtk_style_context_get_font(
+			gtk_widget_get_style_context(pub->mw->view), 0));
+	s.fontname        = fontname;
+	s.wordwrap        = opt_get(pub->mw->menubar, "/M/Options/WordWrap");
+	s.linenumbers     = opt_get(pub->mw->menubar, "/M/Options/LineNumbers");
+	s.autoindent      = opt_get(pub->mw->menubar, "/M/Options/AutoIndent");
+	s.tabwidth        = get_current_tab_width();
+	s.theme           = (gchar *) theme_current();
+	s.sidebar_dir     = (gchar *) sidebar_get_root();
+	s.sidebar_visible = sidebar_is_visible();
 
-	fprintf(fp, "%s\n", PACKAGE_VERSION);
-	fprintf(fp, "%d\n", width);
-	fprintf(fp, "%d\n", height);
-	fprintf(fp, "%s\n", fontname);
-	fprintf(fp, "%d\n", wordwrap);
-	fprintf(fp, "%d\n", linenumbers);
-	fprintf(fp, "%d\n", autoindent);
-	fprintf(fp, "%d\n", tabwidth);
-	fclose(fp);
+	settings_save(&s);
 
 	g_free(fontname);
 }
@@ -193,7 +134,6 @@ static void parse_args(gint argc, gchar **argv, FileInfo *fi)
 
 gint main(gint argc, gchar **argv)
 {
-	Conf *conf;
 	gchar *stdin_data = NULL;
 
 	bindtextdomain(PACKAGE, LOCALEDIR);
@@ -220,36 +160,35 @@ gint main(gint argc, gchar **argv)
 
 	pub->mw = create_main_window();
 
-	conf = g_malloc(sizeof(Conf));
-	conf->width       = 600;
-	conf->height      = 400;
-	conf->fontname    = g_strdup("Monospace 12");
-	conf->wordwrap    = FALSE;
-	conf->linenumbers = FALSE;
-	conf->autoindent  = FALSE;
-	conf->tabwidth    = get_current_tab_width();
-
-	load_config_file(conf);
+	settings_load(&app_settings);
 
 	gtk_window_set_default_size(
-		GTK_WINDOW(pub->mw->window), conf->width, conf->height);
-	set_text_font_by_name(pub->mw->view, conf->fontname);
+		GTK_WINDOW(pub->mw->window), app_settings.width, app_settings.height);
+	set_text_font_by_name(pub->mw->view, app_settings.fontname);
 
 	gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(
 		gtk_ui_manager_get_widget(pub->mw->menubar, "/M/Options/WordWrap")),
-		conf->wordwrap);
+		app_settings.wordwrap);
 	gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(
 		gtk_ui_manager_get_widget(pub->mw->menubar, "/M/Options/LineNumbers")),
-		conf->linenumbers);
-	indent_set_default_tab_width(conf->tabwidth);
+		app_settings.linenumbers);
+	indent_set_default_tab_width(app_settings.tabwidth);
 	indent_refresh_tab_width(pub->mw->view);
 	gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(
 		gtk_ui_manager_get_widget(pub->mw->menubar, "/M/Options/AutoIndent")),
-		conf->autoindent);
+		app_settings.autoindent);
+
+	/* restore theme */
+	if (app_settings.theme && *app_settings.theme)
+		theme_apply_by_name(app_settings.theme);
+
+	/* restore sidebar folder + visibility */
+	if (app_settings.sidebar_dir && *app_settings.sidebar_dir)
+		sidebar_set_root(app_settings.sidebar_dir);
+	if (app_settings.sidebar_visible)
+		sidebar_toggle();
 
 	gtk_widget_show_all(pub->mw->window);
-	g_free(conf->fontname);
-	g_free(conf);
 
 #if ENABLE_EMACS
 	check_emacs_key_theme(GTK_WINDOW(pub->mw->window), pub->mw->menubar);
