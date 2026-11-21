@@ -86,14 +86,6 @@ static const gchar *ui_info =
 "      <menuitem action='Save'/>"
 "      <menuitem action='SaveAs'/>"
 "      <separator/>"
-#if ENABLE_STATISTICS
-"      <menuitem action='Statistics'/>"
-#endif
-#if ENABLE_PRINT
-"      <menuitem action='PrintPreview'/>"
-"      <menuitem action='Print'/>"
-"      <separator/>"
-#endif
 "      <menuitem action='Quit'/>"
 "    </menu>"
 "    <menu action='Edit'>"

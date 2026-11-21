@@ -84,6 +84,47 @@ static gint cmp_entries(gconstpointer a, gconstpointer b)
 	return g_ascii_strcasecmp(na, nb);
 }
 
+/* Content sniff: read up to the first 4 KiB and decide whether the file
+ * looks like text. Heuristic (same spirit as git/file):
+ *   - empty file            -> text
+ *   - contains a NUL byte    -> binary
+ *   - valid UTF-8            -> text
+ *   - else: mostly printable -> text
+ * Avoids listing binaries in the sidebar without needing an extension list. */
+static gboolean is_text_file(const gchar *path)
+{
+	FILE *fp;
+	unsigned char buf[4096];
+	size_t n, i;
+	size_t ctrl = 0;
+
+	fp = fopen(path, "rb");
+	if (!fp)
+		return FALSE;
+	n = fread(buf, 1, sizeof(buf), fp);
+	fclose(fp);
+
+	if (n == 0)
+		return TRUE;                 /* empty = text */
+
+	for (i = 0; i < n; i++)
+		if (buf[i] == 0)
+			return FALSE;        /* NUL => binary */
+
+	/* valid UTF-8 across the sampled chunk? (may clip a trailing multibyte
+	 * char at the 4 KiB boundary, which g_utf8_validate reports via end) */
+	if (g_utf8_validate((const gchar *)buf, n, NULL))
+		return TRUE;
+
+	/* fallback: count non-printable, non-whitespace control bytes */
+	for (i = 0; i < n; i++) {
+		unsigned char c = buf[i];
+		if (c < 0x09 || (c > 0x0d && c < 0x20))
+			ctrl++;
+	}
+	return (ctrl * 100 / n) < 10;        /* <10% control bytes => text */
+}
+
 static void sidebar_populate(void)
 {
 	GDir *dir;
@@ -123,8 +164,9 @@ static void sidebar_populate(void)
 		gchar *full = g_build_filename(current_root, name, NULL);
 		if (g_file_test(full, G_FILE_TEST_IS_DIR))
 			dirs = g_list_prepend(dirs, g_strdup(name));
-		else
+		else if (is_text_file(full))
 			files = g_list_prepend(files, g_strdup(name));
+		/* non-text files are skipped */
 		g_free(full);
 	}
 	g_dir_close(dir);
