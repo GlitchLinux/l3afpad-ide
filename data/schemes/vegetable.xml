@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-vegetable" _name="Vegetable" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Vegetable (rainglow)</_description>
+
+    <style name="text" foreground="#e2dcdd" background="#2d2627"/>
+    <style name="selection" background="#689d81"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#352d2e"/>
+    <style name="line-numbers" foreground="#e2dcdd" background="#2d2627"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#635456"/>
+    <style name="def:string" foreground="#bc6b79"/>
+    <style name="def:keyword" foreground="#f0a56c"/>
+    <style name="def:statement" foreground="#689d81"/>
+    <style name="def:type" foreground="#f0a56c"/>
+    <style name="def:function" foreground="#d8ca96"/>
+    <style name="def:decimal" foreground="#bcae6b"/>
+    <style name="def:floating-point" foreground="#bcae6b"/>
+    <style name="def:base-n-integer" foreground="#bcae6b"/>
+    <style name="def:special-constant" foreground="#689d81"/>
+    <style name="def:constant" foreground="#bcae6b"/>
+    <style name="def:preprocessor" foreground="#8c777a"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-loyal-light" _name="Loyal Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Loyal Light (rainglow)</_description>
+
+    <style name="text" foreground="#413e4f" background="#ffffff"/>
+    <style name="selection" background="#3cbbb1"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#413e4f" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#9d96bc"/>
+    <style name="def:string" foreground="#e5c71b"/>
+    <style name="def:keyword" foreground="#9484d6"/>
+    <style name="def:statement" foreground="#ee4266"/>
+    <style name="def:type" foreground="#3cbbb1"/>
+    <style name="def:function" foreground="#b3adba"/>
+    <style name="def:decimal" foreground="#e5c71b"/>
+    <style name="def:floating-point" foreground="#e5c71b"/>
+    <style name="def:base-n-integer" foreground="#e5c71b"/>
+    <style name="def:special-constant" foreground="#ee4266"/>
+    <style name="def:constant" foreground="#e5c71b"/>
+    <style name="def:preprocessor" foreground="#c9c5da"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

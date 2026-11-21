@@ -162,6 +162,9 @@ gint file_open_real(GtkWidget *view, FileInfo *fi)
 	gtk_text_buffer_place_cursor(buffer, &iter);
 	gtk_text_buffer_set_modified(buffer, FALSE);
 	gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(view), &iter, 0, FALSE, 0, 0);
+
+	/* set syntax highlighting language from the filename */
+	view_set_language_for_file(buffer, fi->filename);
 	g_free(str);
 
 	force_unblock_cb_modified_changed(view);

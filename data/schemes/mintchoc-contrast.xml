@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-mintchoc-contrast" _name="Mintchoc Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Mintchoc Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#bababa" background="#0c0a08"/>
+    <style name="selection" background="#008d62"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#15120e"/>
+    <style name="line-numbers" foreground="#bababa" background="#0c0a08"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#564439"/>
+    <style name="def:string" foreground="#00e08c"/>
+    <style name="def:keyword" foreground="#9d8262"/>
+    <style name="def:statement" foreground="#008d62"/>
+    <style name="def:type" foreground="#9d8262"/>
+    <style name="def:function" foreground="#00e08c"/>
+    <style name="def:decimal" foreground="#00e08c"/>
+    <style name="def:floating-point" foreground="#00e08c"/>
+    <style name="def:base-n-integer" foreground="#00e08c"/>
+    <style name="def:special-constant" foreground="#008d62"/>
+    <style name="def:constant" foreground="#00e08c"/>
+    <style name="def:preprocessor" foreground="#846857"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

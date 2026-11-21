@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-scorch-light" _name="Scorch Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Scorch Light (rainglow)</_description>
+
+    <style name="text" foreground="#514242" background="#f2eded"/>
+    <style name="selection" background="#bd4549"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#f8f6f6"/>
+    <style name="line-numbers" foreground="#514242" background="#f2eded"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#63383c"/>
+    <style name="def:string" foreground="#a58163"/>
+    <style name="def:keyword" foreground="#c6bb57"/>
+    <style name="def:statement" foreground="#bd4549"/>
+    <style name="def:type" foreground="#d39452"/>
+    <style name="def:function" foreground="#cf9e51"/>
+    <style name="def:decimal" foreground="#cc8f5d"/>
+    <style name="def:floating-point" foreground="#cc8f5d"/>
+    <style name="def:base-n-integer" foreground="#cc8f5d"/>
+    <style name="def:special-constant" foreground="#bd4549"/>
+    <style name="def:constant" foreground="#cc8f5d"/>
+    <style name="def:preprocessor" foreground="#94545a"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

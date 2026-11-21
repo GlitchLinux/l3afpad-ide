@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-pleasure-light" _name="Pleasure Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Pleasure Light (rainglow)</_description>
+
+    <style name="text" foreground="#474e56" background="#ffffff"/>
+    <style name="selection" background="#a1cbc6"/>
+    <style name="cursor" foreground="#333333"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#474e56" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#9da7b2"/>
+    <style name="def:string" foreground="#5685ce"/>
+    <style name="def:keyword" foreground="#dd5d7a"/>
+    <style name="def:statement" foreground="#dd5d7a"/>
+    <style name="def:type" foreground="#a175ba"/>
+    <style name="def:function" foreground="#a1cbc6"/>
+    <style name="def:decimal" foreground="#a175ba"/>
+    <style name="def:floating-point" foreground="#a175ba"/>
+    <style name="def:base-n-integer" foreground="#a175ba"/>
+    <style name="def:special-constant" foreground="#dd5d7a"/>
+    <style name="def:constant" foreground="#a175ba"/>
+    <style name="def:preprocessor" foreground="#c8cdd4"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

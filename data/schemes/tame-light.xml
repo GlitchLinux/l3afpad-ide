@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-tame-light" _name="Tame Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Tame Light (rainglow)</_description>
+
+    <style name="text" foreground="#495760" background="#ffffff"/>
+    <style name="selection" background="#707ba0"/>
+    <style name="cursor" foreground="#333333"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#495760" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#4e5c66"/>
+    <style name="def:string" foreground="#84c4ce"/>
+    <style name="def:keyword" foreground="#4571a8"/>
+    <style name="def:statement" foreground="#707ba0"/>
+    <style name="def:type" foreground="#4571a8"/>
+    <style name="def:function" foreground="#495760"/>
+    <style name="def:decimal" foreground="#8770a0"/>
+    <style name="def:floating-point" foreground="#8770a0"/>
+    <style name="def:base-n-integer" foreground="#8770a0"/>
+    <style name="def:special-constant" foreground="#707ba0"/>
+    <style name="def:constant" foreground="#8770a0"/>
+    <style name="def:preprocessor" foreground="#6f8391"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

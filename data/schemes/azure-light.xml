@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-azure-light" _name="Azure Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Azure Light (rainglow)</_description>
+
+    <style name="text" foreground="#444444" background="#ffffff"/>
+    <style name="selection" background="#47959a"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#444444" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#aaaaaa"/>
+    <style name="def:string" foreground="#64aeb3"/>
+    <style name="def:keyword" foreground="#508aaa"/>
+    <style name="def:statement" foreground="#8291ad"/>
+    <style name="def:type" foreground="#6ab0a3"/>
+    <style name="def:function" foreground="#508aaa"/>
+    <style name="def:decimal" foreground="#64aeb3"/>
+    <style name="def:floating-point" foreground="#64aeb3"/>
+    <style name="def:base-n-integer" foreground="#64aeb3"/>
+    <style name="def:special-constant" foreground="#8291ad"/>
+    <style name="def:constant" foreground="#64aeb3"/>
+    <style name="def:preprocessor" foreground="#d0d0d0"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

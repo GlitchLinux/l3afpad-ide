@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-userscape-light" _name="Userscape Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Userscape Light (rainglow)</_description>
+
+    <style name="text" foreground="#879bb0" background="#f5f8fc"/>
+    <style name="selection" background="#355b8c"/>
+    <style name="cursor" foreground="#444444"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#879bb0" background="#f5f8fc"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#bbbbbb"/>
+    <style name="def:string" foreground="#e3bd14"/>
+    <style name="def:keyword" foreground="#808c9c"/>
+    <style name="def:statement" foreground="#355b8c"/>
+    <style name="def:type" foreground="#a8c0e0"/>
+    <style name="def:function" foreground="#e3bd14"/>
+    <style name="def:decimal" foreground="#de4d3a"/>
+    <style name="def:floating-point" foreground="#de4d3a"/>
+    <style name="def:base-n-integer" foreground="#de4d3a"/>
+    <style name="def:special-constant" foreground="#355b8c"/>
+    <style name="def:constant" foreground="#de4d3a"/>
+    <style name="def:preprocessor" foreground="#e1e1e1"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-halflife-contrast" _name="Halflife Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Halflife Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#cccccc" background="#000000"/>
+    <style name="selection" background="#f85931"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#080808"/>
+    <style name="line-numbers" foreground="#cccccc" background="#000000"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#555555"/>
+    <style name="def:string" foreground="#f9d423"/>
+    <style name="def:keyword" foreground="#7d8991"/>
+    <style name="def:statement" foreground="#7d8991"/>
+    <style name="def:type" foreground="#fc913a"/>
+    <style name="def:function" foreground="#f9d423"/>
+    <style name="def:decimal" foreground="#f9d423"/>
+    <style name="def:floating-point" foreground="#f9d423"/>
+    <style name="def:base-n-integer" foreground="#f9d423"/>
+    <style name="def:special-constant" foreground="#7d8991"/>
+    <style name="def:constant" foreground="#f9d423"/>
+    <style name="def:preprocessor" foreground="#7b7b7b"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

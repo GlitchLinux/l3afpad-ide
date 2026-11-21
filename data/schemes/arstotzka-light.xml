@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-arstotzka-light" _name="Arstotzka Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Arstotzka Light (rainglow)</_description>
+
+    <style name="text" foreground="#333333" background="#ffffff"/>
+    <style name="selection" background="#516b6b"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#333333" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#bbbbbb"/>
+    <style name="def:string" foreground="#7ebcaa"/>
+    <style name="def:keyword" foreground="#a2a797"/>
+    <style name="def:statement" foreground="#516b6b"/>
+    <style name="def:type" foreground="#a2a797"/>
+    <style name="def:function" foreground="#70807b"/>
+    <style name="def:decimal" foreground="#7ebcaa"/>
+    <style name="def:floating-point" foreground="#7ebcaa"/>
+    <style name="def:base-n-integer" foreground="#7ebcaa"/>
+    <style name="def:special-constant" foreground="#516b6b"/>
+    <style name="def:constant" foreground="#7ebcaa"/>
+    <style name="def:preprocessor" foreground="#e1e1e1"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

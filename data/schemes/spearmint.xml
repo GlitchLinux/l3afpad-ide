@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-spearmint" _name="Spearmint" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Spearmint (rainglow)</_description>
+
+    <style name="text" foreground="#c9dbd9" background="#415654"/>
+    <style name="selection" background="#25808a"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#485f5c"/>
+    <style name="line-numbers" foreground="#c9dbd9" background="#415654"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#749995"/>
+    <style name="def:string" foreground="#4cd7e0"/>
+    <style name="def:keyword" foreground="#69adb5"/>
+    <style name="def:statement" foreground="#25808a"/>
+    <style name="def:type" foreground="#69adb5"/>
+    <style name="def:function" foreground="#4cd7e0"/>
+    <style name="def:decimal" foreground="#199fa8"/>
+    <style name="def:floating-point" foreground="#199fa8"/>
+    <style name="def:base-n-integer" foreground="#199fa8"/>
+    <style name="def:special-constant" foreground="#25808a"/>
+    <style name="def:constant" foreground="#199fa8"/>
+    <style name="def:preprocessor" foreground="#a0b9b7"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

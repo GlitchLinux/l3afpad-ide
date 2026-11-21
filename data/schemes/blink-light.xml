@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-blink-light" _name="Blink Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Blink Light (rainglow)</_description>
+
+    <style name="text" foreground="#6a7e89" background="#ffffff"/>
+    <style name="selection" background="#43b5b3"/>
+    <style name="cursor" foreground="#333333"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#6a7e89" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#a6b4bc"/>
+    <style name="def:string" foreground="#84c4ce"/>
+    <style name="def:keyword" foreground="#d4856a"/>
+    <style name="def:statement" foreground="#d4856a"/>
+    <style name="def:type" foreground="#5298c4"/>
+    <style name="def:function" foreground="#43b5b3"/>
+    <style name="def:decimal" foreground="#529ca8"/>
+    <style name="def:floating-point" foreground="#529ca8"/>
+    <style name="def:base-n-integer" foreground="#529ca8"/>
+    <style name="def:special-constant" foreground="#d4856a"/>
+    <style name="def:constant" foreground="#529ca8"/>
+    <style name="def:preprocessor" foreground="#d2d9dd"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-zacks-contrast" _name="Zacks Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Zacks Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#f0f0f0" background="#000000"/>
+    <style name="selection" background="#9c7ddb"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#080808"/>
+    <style name="line-numbers" foreground="#f0f0f0" background="#000000"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#777777"/>
+    <style name="def:string" foreground="#bcd42a"/>
+    <style name="def:keyword" foreground="#ff6a38"/>
+    <style name="def:statement" foreground="#ff6a38"/>
+    <style name="def:type" foreground="#9c7ddb"/>
+    <style name="def:function" foreground="#bcd42a"/>
+    <style name="def:decimal" foreground="#bcd42a"/>
+    <style name="def:floating-point" foreground="#bcd42a"/>
+    <style name="def:base-n-integer" foreground="#bcd42a"/>
+    <style name="def:special-constant" foreground="#ff6a38"/>
+    <style name="def:constant" foreground="#bcd42a"/>
+    <style name="def:preprocessor" foreground="#9d9d9d"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

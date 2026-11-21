@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-horizon-light" _name="Horizon Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Horizon Light (rainglow)</_description>
+
+    <style name="text" foreground="#474466" background="#ffffff"/>
+    <style name="selection" background="#fd8a25"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#474466" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#736faa"/>
+    <style name="def:string" foreground="#fd8a25"/>
+    <style name="def:keyword" foreground="#e5194b"/>
+    <style name="def:statement" foreground="#ba66d6"/>
+    <style name="def:type" foreground="#fd8a25"/>
+    <style name="def:function" foreground="#fed230"/>
+    <style name="def:decimal" foreground="#e524a9"/>
+    <style name="def:floating-point" foreground="#e524a9"/>
+    <style name="def:base-n-integer" foreground="#e524a9"/>
+    <style name="def:special-constant" foreground="#ba66d6"/>
+    <style name="def:constant" foreground="#e524a9"/>
+    <style name="def:preprocessor" foreground="#a29fc6"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-tetra-light" _name="Tetra Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Tetra Light (rainglow)</_description>
+
+    <style name="text" foreground="#205a68" background="#ffffff"/>
+    <style name="selection" background="#148b97"/>
+    <style name="cursor" foreground="#333333"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#205a68" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#b1d6e0"/>
+    <style name="def:string" foreground="#7fc181"/>
+    <style name="def:keyword" foreground="#e2585d"/>
+    <style name="def:statement" foreground="#c49a52"/>
+    <style name="def:type" foreground="#148b97"/>
+    <style name="def:function" foreground="#e8744a"/>
+    <style name="def:decimal" foreground="#7fc181"/>
+    <style name="def:floating-point" foreground="#7fc181"/>
+    <style name="def:base-n-integer" foreground="#7fc181"/>
+    <style name="def:special-constant" foreground="#c49a52"/>
+    <style name="def:constant" foreground="#7fc181"/>
+    <style name="def:preprocessor" foreground="#e8f3f6"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

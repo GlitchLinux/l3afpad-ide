@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-lichen-light" _name="Lichen Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Lichen Light (rainglow)</_description>
+
+    <style name="text" foreground="#414549" background="#e6e9ed"/>
+    <style name="selection" background="#1a9d6b"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#eff1f3"/>
+    <style name="line-numbers" foreground="#414549" background="#e6e9ed"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#405b75"/>
+    <style name="def:string" foreground="#858e43"/>
+    <style name="def:keyword" foreground="#246c82"/>
+    <style name="def:statement" foreground="#64964c"/>
+    <style name="def:type" foreground="#249388"/>
+    <style name="def:function" foreground="#1a9d6b"/>
+    <style name="def:decimal" foreground="#858e43"/>
+    <style name="def:floating-point" foreground="#858e43"/>
+    <style name="def:base-n-integer" foreground="#858e43"/>
+    <style name="def:special-constant" foreground="#64964c"/>
+    <style name="def:constant" foreground="#858e43"/>
+    <style name="def:preprocessor" foreground="#5c81a6"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

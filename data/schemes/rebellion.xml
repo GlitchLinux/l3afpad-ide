@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-rebellion" _name="Rebellion" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Rebellion (rainglow)</_description>
+
+    <style name="text" foreground="#d6c7ab" background="#23231a"/>
+    <style name="selection" background="#fe5f00"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#2c2c21"/>
+    <style name="line-numbers" foreground="#d6c7ab" background="#23231a"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#51513d"/>
+    <style name="def:string" foreground="#fdb825"/>
+    <style name="def:keyword" foreground="#fe5f00"/>
+    <style name="def:statement" foreground="#988f2a"/>
+    <style name="def:type" foreground="#fe5f00"/>
+    <style name="def:function" foreground="#8e7547"/>
+    <style name="def:decimal" foreground="#fd9825"/>
+    <style name="def:floating-point" foreground="#fd9825"/>
+    <style name="def:base-n-integer" foreground="#fd9825"/>
+    <style name="def:special-constant" foreground="#988f2a"/>
+    <style name="def:constant" foreground="#fd9825"/>
+    <style name="def:preprocessor" foreground="#7d7d5e"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

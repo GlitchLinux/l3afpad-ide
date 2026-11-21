@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-glance-light" _name="Glance Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Glance Light (rainglow)</_description>
+
+    <style name="text" foreground="#2d3142" background="#ffffff"/>
+    <style name="selection" background="#ef8354"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#2d3142" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#aba6bf"/>
+    <style name="def:string" foreground="#5e8759"/>
+    <style name="def:keyword" foreground="#ef8354"/>
+    <style name="def:statement" foreground="#6e81a0"/>
+    <style name="def:type" foreground="#ef8354"/>
+    <style name="def:function" foreground="#2d3142"/>
+    <style name="def:decimal" foreground="#7cb8ba"/>
+    <style name="def:floating-point" foreground="#7cb8ba"/>
+    <style name="def:base-n-integer" foreground="#7cb8ba"/>
+    <style name="def:special-constant" foreground="#6e81a0"/>
+    <style name="def:constant" foreground="#7cb8ba"/>
+    <style name="def:preprocessor" foreground="#d5d3df"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

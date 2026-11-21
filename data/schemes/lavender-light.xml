@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-lavender-light" _name="Lavender Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Lavender Light (rainglow)</_description>
+
+    <style name="text" foreground="#29222e" background="#ffffff"/>
+    <style name="selection" background="#b657ff"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#29222e" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#9177a3"/>
+    <style name="def:string" foreground="#f5b0ef"/>
+    <style name="def:keyword" foreground="#8e6da6"/>
+    <style name="def:statement" foreground="#b657ff"/>
+    <style name="def:type" foreground="#a29dfa"/>
+    <style name="def:function" foreground="#f5b0ef"/>
+    <style name="def:decimal" foreground="#f25ae6"/>
+    <style name="def:floating-point" foreground="#f25ae6"/>
+    <style name="def:base-n-integer" foreground="#f25ae6"/>
+    <style name="def:special-constant" foreground="#b657ff"/>
+    <style name="def:constant" foreground="#f25ae6"/>
+    <style name="def:preprocessor" foreground="#b6a5c2"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

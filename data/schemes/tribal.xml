@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-tribal" _name="Tribal" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Tribal (rainglow)</_description>
+
+    <style name="text" foreground="#ffffff" background="#393942"/>
+    <style name="selection" background="#47959a"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#40404a"/>
+    <style name="line-numbers" foreground="#ffffff" background="#393942"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#6b6b7a"/>
+    <style name="def:string" foreground="#64aeb3"/>
+    <style name="def:keyword" foreground="#5f5582"/>
+    <style name="def:statement" foreground="#5f5582"/>
+    <style name="def:type" foreground="#c43535"/>
+    <style name="def:function" foreground="#e0ddeb"/>
+    <style name="def:decimal" foreground="#64aeb3"/>
+    <style name="def:floating-point" foreground="#64aeb3"/>
+    <style name="def:base-n-integer" foreground="#64aeb3"/>
+    <style name="def:special-constant" foreground="#5f5582"/>
+    <style name="def:constant" foreground="#64aeb3"/>
+    <style name="def:preprocessor" foreground="#92929f"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-tame-contrast" _name="Tame Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Tame Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#c0ccdb" background="#15191c"/>
+    <style name="selection" background="#707ba0"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#1c2125"/>
+    <style name="line-numbers" foreground="#c0ccdb" background="#15191c"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#4e5c66"/>
+    <style name="def:string" foreground="#84c4ce"/>
+    <style name="def:keyword" foreground="#4571a8"/>
+    <style name="def:statement" foreground="#707ba0"/>
+    <style name="def:type" foreground="#4571a8"/>
+    <style name="def:function" foreground="#98abb7"/>
+    <style name="def:decimal" foreground="#8770a0"/>
+    <style name="def:floating-point" foreground="#8770a0"/>
+    <style name="def:base-n-integer" foreground="#8770a0"/>
+    <style name="def:special-constant" foreground="#707ba0"/>
+    <style name="def:constant" foreground="#8770a0"/>
+    <style name="def:preprocessor" foreground="#6f8391"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-yule" _name="Yule" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Yule (rainglow)</_description>
+
+    <style name="text" foreground="#ede0ce" background="#2b2a27"/>
+    <style name="selection" background="#d63131"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#33322e"/>
+    <style name="line-numbers" foreground="#ede0ce" background="#2b2a27"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#7a7267"/>
+    <style name="def:string" foreground="#ebb626"/>
+    <style name="def:keyword" foreground="#39b81f"/>
+    <style name="def:statement" foreground="#d63131"/>
+    <style name="def:type" foreground="#39b81f"/>
+    <style name="def:function" foreground="#ebb626"/>
+    <style name="def:decimal" foreground="#ebb626"/>
+    <style name="def:floating-point" foreground="#ebb626"/>
+    <style name="def:base-n-integer" foreground="#ebb626"/>
+    <style name="def:special-constant" foreground="#d63131"/>
+    <style name="def:constant" foreground="#ebb626"/>
+    <style name="def:preprocessor" foreground="#a0988e"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-bold-contrast" _name="Bold Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Bold Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#ffffff" background="#0f0d0d"/>
+    <style name="selection" background="#3d8e91"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#171414"/>
+    <style name="line-numbers" foreground="#ffffff" background="#0f0d0d"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#534b4b"/>
+    <style name="def:string" foreground="#f7a21b"/>
+    <style name="def:keyword" foreground="#f0624b"/>
+    <style name="def:statement" foreground="#f0624b"/>
+    <style name="def:type" foreground="#3d8e91"/>
+    <style name="def:function" foreground="#b4b7ad"/>
+    <style name="def:decimal" foreground="#f7a21b"/>
+    <style name="def:floating-point" foreground="#f7a21b"/>
+    <style name="def:base-n-integer" foreground="#f7a21b"/>
+    <style name="def:special-constant" foreground="#f0624b"/>
+    <style name="def:constant" foreground="#f7a21b"/>
+    <style name="def:preprocessor" foreground="#7b6f6f"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

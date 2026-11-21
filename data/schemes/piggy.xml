@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-piggy" _name="Piggy" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Piggy (rainglow)</_description>
+
+    <style name="text" foreground="#edebe6" background="#3d2f34"/>
+    <style name="selection" background="#f52e62"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#46363b"/>
+    <style name="line-numbers" foreground="#edebe6" background="#3d2f34"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#685259"/>
+    <style name="def:string" foreground="#ff453e"/>
+    <style name="def:keyword" foreground="#fd6a5d"/>
+    <style name="def:statement" foreground="#fd6a5d"/>
+    <style name="def:type" foreground="#f52e62"/>
+    <style name="def:function" foreground="#ff5d80"/>
+    <style name="def:decimal" foreground="#ff453e"/>
+    <style name="def:floating-point" foreground="#ff453e"/>
+    <style name="def:base-n-integer" foreground="#ff453e"/>
+    <style name="def:special-constant" foreground="#fd6a5d"/>
+    <style name="def:constant" foreground="#ff453e"/>
+    <style name="def:preprocessor" foreground="#92757e"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -27,5 +27,5 @@ l3afpad_SOURCES = \
 	emacs.h emacs.c \
 	gtksourceiter.h gtksourceiter.c
 
-l3afpad_CFLAGS  = $(GTK_CFLAGS) $(JSON_CFLAGS)
-l3afpad_LDADD   = $(GTK_LIBS) $(JSON_LIBS) $(INTLLIBS)
+l3afpad_CFLAGS  = $(GTK_CFLAGS) $(JSON_CFLAGS) $(GTKSOURCEVIEW_CFLAGS)
+l3afpad_LDADD   = $(GTK_LIBS) $(JSON_LIBS) $(GTKSOURCEVIEW_LIBS) $(INTLLIBS)

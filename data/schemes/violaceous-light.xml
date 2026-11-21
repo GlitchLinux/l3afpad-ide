@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-violaceous-light" _name="Violaceous Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Violaceous Light (rainglow)</_description>
+
+    <style name="text" foreground="#444349" background="#e5e3ef"/>
+    <style name="selection" background="#725ac1"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#eeedf5"/>
+    <style name="line-numbers" foreground="#444349" background="#e5e3ef"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#594b87"/>
+    <style name="def:string" foreground="#b58ad1"/>
+    <style name="def:keyword" foreground="#725ac1"/>
+    <style name="def:statement" foreground="#8d86c9"/>
+    <style name="def:type" foreground="#725ac1"/>
+    <style name="def:function" foreground="#8d8593"/>
+    <style name="def:decimal" foreground="#944fc1"/>
+    <style name="def:floating-point" foreground="#944fc1"/>
+    <style name="def:base-n-integer" foreground="#944fc1"/>
+    <style name="def:special-constant" foreground="#8d86c9"/>
+    <style name="def:constant" foreground="#944fc1"/>
+    <style name="def:preprocessor" foreground="#7e6faf"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

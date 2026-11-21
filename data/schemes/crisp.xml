@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-crisp" _name="Crisp" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Crisp (rainglow)</_description>
+
+    <style name="text" foreground="#ffffff" background="#221a22"/>
+    <style name="selection" background="#fc6a0f"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#2b212b"/>
+    <style name="line-numbers" foreground="#ffffff" background="#221a22"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#574457"/>
+    <style name="def:string" foreground="#fc9a0f"/>
+    <style name="def:keyword" foreground="#fc6a0f"/>
+    <style name="def:statement" foreground="#765478"/>
+    <style name="def:type" foreground="#cba0cd"/>
+    <style name="def:function" foreground="#fc6a0f"/>
+    <style name="def:decimal" foreground="#fc9a0f"/>
+    <style name="def:floating-point" foreground="#fc9a0f"/>
+    <style name="def:base-n-integer" foreground="#fc9a0f"/>
+    <style name="def:special-constant" foreground="#765478"/>
+    <style name="def:constant" foreground="#fc9a0f"/>
+    <style name="def:preprocessor" foreground="#826682"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-hub" _name="Hub" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Hub (rainglow)</_description>
+
+    <style name="text" foreground="#ffffff" background="#3b444c"/>
+    <style name="selection" background="#077cf9"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#424c55"/>
+    <style name="line-numbers" foreground="#ffffff" background="#3b444c"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#718493"/>
+    <style name="def:string" foreground="#9fbde0"/>
+    <style name="def:keyword" foreground="#e85362"/>
+    <style name="def:statement" foreground="#5392db"/>
+    <style name="def:type" foreground="#e85362"/>
+    <style name="def:function" foreground="#5392db"/>
+    <style name="def:decimal" foreground="#9fbde0"/>
+    <style name="def:floating-point" foreground="#9fbde0"/>
+    <style name="def:base-n-integer" foreground="#9fbde0"/>
+    <style name="def:special-constant" foreground="#5392db"/>
+    <style name="def:constant" foreground="#9fbde0"/>
+    <style name="def:preprocessor" foreground="#9caab4"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

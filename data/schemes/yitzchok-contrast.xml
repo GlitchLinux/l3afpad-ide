@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-yitzchok-contrast" _name="Yitzchok Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Yitzchok Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#afb7bf" background="#101316"/>
+    <style name="selection" background="#e7be45"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#161b1f"/>
+    <style name="line-numbers" foreground="#afb7bf" background="#101316"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#49525b"/>
+    <style name="def:string" foreground="#eae18f"/>
+    <style name="def:keyword" foreground="#e7be45"/>
+    <style name="def:statement" foreground="#7a8289"/>
+    <style name="def:type" foreground="#e7be45"/>
+    <style name="def:function" foreground="#e6eaef"/>
+    <style name="def:decimal" foreground="#bab47c"/>
+    <style name="def:floating-point" foreground="#bab47c"/>
+    <style name="def:base-n-integer" foreground="#bab47c"/>
+    <style name="def:special-constant" foreground="#7a8289"/>
+    <style name="def:constant" foreground="#bab47c"/>
+    <style name="def:preprocessor" foreground="#6b7885"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

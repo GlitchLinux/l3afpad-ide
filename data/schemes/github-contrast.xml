@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-github-contrast" _name="Github Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Github Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#ffffff" background="#111111"/>
+    <style name="selection" background="#008080"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#191919"/>
+    <style name="line-numbers" foreground="#ffffff" background="#111111"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#555555"/>
+    <style name="def:string" foreground="#e53d67"/>
+    <style name="def:keyword" foreground="#cccccc"/>
+    <style name="def:statement" foreground="#66c4c4"/>
+    <style name="def:type" foreground="#7385bc"/>
+    <style name="def:function" foreground="#e53d67"/>
+    <style name="def:decimal" foreground="#e53d67"/>
+    <style name="def:floating-point" foreground="#e53d67"/>
+    <style name="def:base-n-integer" foreground="#e53d67"/>
+    <style name="def:special-constant" foreground="#66c4c4"/>
+    <style name="def:constant" foreground="#e53d67"/>
+    <style name="def:preprocessor" foreground="#7b7b7b"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

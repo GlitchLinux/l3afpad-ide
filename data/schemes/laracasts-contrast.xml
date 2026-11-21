@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-laracasts-contrast" _name="Laracasts Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Laracasts Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#c0ccdb" background="#292d33"/>
+    <style name="selection" background="#00b1b3"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#30343b"/>
+    <style name="line-numbers" foreground="#c0ccdb" background="#292d33"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#76818e"/>
+    <style name="def:string" foreground="#98d5d6"/>
+    <style name="def:keyword" foreground="#00b1b3"/>
+    <style name="def:statement" foreground="#ef6733"/>
+    <style name="def:type" foreground="#00b1b3"/>
+    <style name="def:function" foreground="#ffffff"/>
+    <style name="def:decimal" foreground="#c68369"/>
+    <style name="def:floating-point" foreground="#c68369"/>
+    <style name="def:base-n-integer" foreground="#c68369"/>
+    <style name="def:special-constant" foreground="#ef6733"/>
+    <style name="def:constant" foreground="#c68369"/>
+    <style name="def:preprocessor" foreground="#a0a8b1"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

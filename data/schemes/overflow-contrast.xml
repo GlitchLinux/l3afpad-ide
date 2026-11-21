@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-overflow-contrast" _name="Overflow Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Overflow Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#aeb9c4" background="#14181c"/>
+    <style name="selection" background="#b0ca48"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#1a2025"/>
+    <style name="line-numbers" foreground="#aeb9c4" background="#14181c"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#44515e"/>
+    <style name="def:string" foreground="#4abcc9"/>
+    <style name="def:keyword" foreground="#fe532c"/>
+    <style name="def:statement" foreground="#b0ca48"/>
+    <style name="def:type" foreground="#fe532c"/>
+    <style name="def:function" foreground="#1f9aa8"/>
+    <style name="def:decimal" foreground="#ef8b75"/>
+    <style name="def:floating-point" foreground="#ef8b75"/>
+    <style name="def:base-n-integer" foreground="#ef8b75"/>
+    <style name="def:special-constant" foreground="#b0ca48"/>
+    <style name="def:constant" foreground="#ef8b75"/>
+    <style name="def:preprocessor" foreground="#64778a"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

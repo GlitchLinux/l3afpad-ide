@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-newton-light" _name="Newton Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Newton Light (rainglow)</_description>
+
+    <style name="text" foreground="#444444" background="#ffffff"/>
+    <style name="selection" background="#ff5d38"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#444444" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#aaaaaa"/>
+    <style name="def:string" foreground="#9fd356"/>
+    <style name="def:keyword" foreground="#fa824c"/>
+    <style name="def:statement" foreground="#ffbf69"/>
+    <style name="def:type" foreground="#fa824c"/>
+    <style name="def:function" foreground="#3c91e6"/>
+    <style name="def:decimal" foreground="#9fd356"/>
+    <style name="def:floating-point" foreground="#9fd356"/>
+    <style name="def:base-n-integer" foreground="#9fd356"/>
+    <style name="def:special-constant" foreground="#ffbf69"/>
+    <style name="def:constant" foreground="#9fd356"/>
+    <style name="def:preprocessor" foreground="#d0d0d0"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

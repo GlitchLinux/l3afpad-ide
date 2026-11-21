@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-goldfish-light" _name="Goldfish Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Goldfish Light (rainglow)</_description>
+
+    <style name="text" foreground="#2e3336" background="#ffffff"/>
+    <style name="selection" background="#f38630"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#2e3336" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#869aa5"/>
+    <style name="def:string" foreground="#f36e3a"/>
+    <style name="def:keyword" foreground="#91bfbc"/>
+    <style name="def:statement" foreground="#fa6900"/>
+    <style name="def:type" foreground="#f38630"/>
+    <style name="def:function" foreground="#69d2e7"/>
+    <style name="def:decimal" foreground="#f25619"/>
+    <style name="def:floating-point" foreground="#f25619"/>
+    <style name="def:base-n-integer" foreground="#f25619"/>
+    <style name="def:special-constant" foreground="#fa6900"/>
+    <style name="def:constant" foreground="#f25619"/>
+    <style name="def:preprocessor" foreground="#b2bfc6"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-crackpot-contrast" _name="Crackpot Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Crackpot Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#d2c9ef" background="#181726"/>
+    <style name="selection" background="#ef6461"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#1e1d30"/>
+    <style name="line-numbers" foreground="#d2c9ef" background="#181726"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#454370"/>
+    <style name="def:string" foreground="#d2c9ef"/>
+    <style name="def:keyword" foreground="#e4b363"/>
+    <style name="def:statement" foreground="#ef6461"/>
+    <style name="def:type" foreground="#e4b363"/>
+    <style name="def:function" foreground="#908cd8"/>
+    <style name="def:decimal" foreground="#d2c9ef"/>
+    <style name="def:floating-point" foreground="#d2c9ef"/>
+    <style name="def:base-n-integer" foreground="#d2c9ef"/>
+    <style name="def:special-constant" foreground="#ef6461"/>
+    <style name="def:constant" foreground="#d2c9ef"/>
+    <style name="def:preprocessor" foreground="#6360a0"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

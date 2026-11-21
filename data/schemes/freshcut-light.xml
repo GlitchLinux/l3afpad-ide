@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-freshcut-light" _name="FreshCut Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>FreshCut Light (rainglow)</_description>
+
+    <style name="text" foreground="#2f3030" background="#ffffff"/>
+    <style name="selection" background="#008097"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#2f3030" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#bbbbbb"/>
+    <style name="def:string" foreground="#777747"/>
+    <style name="def:keyword" foreground="#8e99a5"/>
+    <style name="def:statement" foreground="#008299"/>
+    <style name="def:type" foreground="#3da09a"/>
+    <style name="def:function" foreground="#83aa29"/>
+    <style name="def:decimal" foreground="#8fbe00"/>
+    <style name="def:floating-point" foreground="#8fbe00"/>
+    <style name="def:base-n-integer" foreground="#8fbe00"/>
+    <style name="def:special-constant" foreground="#008299"/>
+    <style name="def:constant" foreground="#8fbe00"/>
+    <style name="def:preprocessor" foreground="#e1e1e1"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

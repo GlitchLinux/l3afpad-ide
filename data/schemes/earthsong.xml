@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-earthsong" _name="Earthsong" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Earthsong (rainglow)</_description>
+
+    <style name="text" foreground="#ebd1b7" background="#36312c"/>
+    <style name="selection" background="#db784d"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#3e3933"/>
+    <style name="line-numbers" foreground="#ebd1b7" background="#36312c"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#7a7267"/>
+    <style name="def:string" foreground="#f8bb39"/>
+    <style name="def:keyword" foreground="#db784d"/>
+    <style name="def:statement" foreground="#db784d"/>
+    <style name="def:type" foreground="#95cc5e"/>
+    <style name="def:function" foreground="#60a365"/>
+    <style name="def:decimal" foreground="#f8bb39"/>
+    <style name="def:floating-point" foreground="#f8bb39"/>
+    <style name="def:base-n-integer" foreground="#f8bb39"/>
+    <style name="def:special-constant" foreground="#db784d"/>
+    <style name="def:constant" foreground="#f8bb39"/>
+    <style name="def:preprocessor" foreground="#a0988e"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-peel" _name="Peel" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Peel (rainglow)</_description>
+
+    <style name="text" foreground="#edebe6" background="#23201c"/>
+    <style name="selection" background="#d3643b"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#2b2823"/>
+    <style name="line-numbers" foreground="#edebe6" background="#23201c"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#585146"/>
+    <style name="def:string" foreground="#f4d370"/>
+    <style name="def:keyword" foreground="#94c7b6"/>
+    <style name="def:statement" foreground="#d3643b"/>
+    <style name="def:type" foreground="#94c7b6"/>
+    <style name="def:function" foreground="#d6e1c7"/>
+    <style name="def:decimal" foreground="#f4d370"/>
+    <style name="def:floating-point" foreground="#f4d370"/>
+    <style name="def:base-n-integer" foreground="#f4d370"/>
+    <style name="def:special-constant" foreground="#d3643b"/>
+    <style name="def:constant" foreground="#f4d370"/>
+    <style name="def:preprocessor" foreground="#837868"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-brave" _name="Brave" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Brave (rainglow)</_description>
+
+    <style name="text" foreground="#d6dbdb" background="#333846"/>
+    <style name="selection" background="#908bbc"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#393f4f"/>
+    <style name="line-numbers" foreground="#d6dbdb" background="#333846"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#64617a"/>
+    <style name="def:string" foreground="#63a5a5"/>
+    <style name="def:keyword" foreground="#abaab7"/>
+    <style name="def:statement" foreground="#908bbc"/>
+    <style name="def:type" foreground="#bc4331"/>
+    <style name="def:function" foreground="#91b9c9"/>
+    <style name="def:decimal" foreground="#4eadad"/>
+    <style name="def:floating-point" foreground="#4eadad"/>
+    <style name="def:base-n-integer" foreground="#4eadad"/>
+    <style name="def:special-constant" foreground="#908bbc"/>
+    <style name="def:constant" foreground="#4eadad"/>
+    <style name="def:preprocessor" foreground="#8a88a0"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

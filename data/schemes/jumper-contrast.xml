@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-jumper-contrast" _name="Jumper Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Jumper Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#8da0a0" background="#0e1111"/>
+    <style name="selection" background="#36a595"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#151919"/>
+    <style name="line-numbers" foreground="#8da0a0" background="#0e1111"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#394747"/>
+    <style name="def:string" foreground="#63a5a5"/>
+    <style name="def:keyword" foreground="#e08e4c"/>
+    <style name="def:statement" foreground="#f6da40"/>
+    <style name="def:type" foreground="#36a595"/>
+    <style name="def:function" foreground="#db515c"/>
+    <style name="def:decimal" foreground="#4eadad"/>
+    <style name="def:floating-point" foreground="#4eadad"/>
+    <style name="def:base-n-integer" foreground="#4eadad"/>
+    <style name="def:special-constant" foreground="#f6da40"/>
+    <style name="def:constant" foreground="#4eadad"/>
+    <style name="def:preprocessor" foreground="#5b7171"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

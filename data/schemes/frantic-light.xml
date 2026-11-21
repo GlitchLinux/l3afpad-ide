@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-frantic-light" _name="Frantic Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Frantic Light (rainglow)</_description>
+
+    <style name="text" foreground="#516172" background="#ffffff"/>
+    <style name="selection" background="#ef6462"/>
+    <style name="cursor" foreground="#333333"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#516172" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#44515e"/>
+    <style name="def:string" foreground="#afa9e5"/>
+    <style name="def:keyword" foreground="#ef6462"/>
+    <style name="def:statement" foreground="#89a7bc"/>
+    <style name="def:type" foreground="#ef6462"/>
+    <style name="def:function" foreground="#516172"/>
+    <style name="def:decimal" foreground="#968cea"/>
+    <style name="def:floating-point" foreground="#968cea"/>
+    <style name="def:base-n-integer" foreground="#968cea"/>
+    <style name="def:special-constant" foreground="#89a7bc"/>
+    <style name="def:constant" foreground="#968cea"/>
+    <style name="def:preprocessor" foreground="#64778a"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

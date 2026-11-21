@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-super-light" _name="Super Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Super Light (rainglow)</_description>
+
+    <style name="text" foreground="#333333" background="#ffffff"/>
+    <style name="selection" background="#e45635"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#333333" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#999999"/>
+    <style name="def:string" foreground="#f7a21b"/>
+    <style name="def:keyword" foreground="#5d67ad"/>
+    <style name="def:statement" foreground="#d60257"/>
+    <style name="def:type" foreground="#5d67ad"/>
+    <style name="def:function" foreground="#e45635"/>
+    <style name="def:decimal" foreground="#f7a21b"/>
+    <style name="def:floating-point" foreground="#f7a21b"/>
+    <style name="def:base-n-integer" foreground="#f7a21b"/>
+    <style name="def:special-constant" foreground="#d60257"/>
+    <style name="def:constant" foreground="#f7a21b"/>
+    <style name="def:preprocessor" foreground="#bfbfbf"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

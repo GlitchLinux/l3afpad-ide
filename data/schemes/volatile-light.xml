@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-volatile-light" _name="Volatile Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Volatile Light (rainglow)</_description>
+
+    <style name="text" foreground="#474f56" background="#ffffff"/>
+    <style name="selection" background="#568769"/>
+    <style name="cursor" foreground="#333333"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#474f56" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#98a3ad"/>
+    <style name="def:string" foreground="#dac25c"/>
+    <style name="def:keyword" foreground="#ee9c3d"/>
+    <style name="def:statement" foreground="#568769"/>
+    <style name="def:type" foreground="#ee9c3d"/>
+    <style name="def:function" foreground="#474f56"/>
+    <style name="def:decimal" foreground="#db5a51"/>
+    <style name="def:floating-point" foreground="#db5a51"/>
+    <style name="def:base-n-integer" foreground="#db5a51"/>
+    <style name="def:special-constant" foreground="#568769"/>
+    <style name="def:constant" foreground="#db5a51"/>
+    <style name="def:preprocessor" foreground="#c3c9cf"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

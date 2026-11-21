@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-loyal-contrast" _name="Loyal Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Loyal Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#bbb1c9" background="#1d1b23"/>
+    <style name="selection" background="#3cbbb1"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#24222c"/>
+    <style name="line-numbers" foreground="#bbb1c9" background="#1d1b23"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#655a72"/>
+    <style name="def:string" foreground="#e5c71b"/>
+    <style name="def:keyword" foreground="#9484d6"/>
+    <style name="def:statement" foreground="#ee4266"/>
+    <style name="def:type" foreground="#3cbbb1"/>
+    <style name="def:function" foreground="#b3adba"/>
+    <style name="def:decimal" foreground="#e5c71b"/>
+    <style name="def:floating-point" foreground="#e5c71b"/>
+    <style name="def:base-n-integer" foreground="#e5c71b"/>
+    <style name="def:special-constant" foreground="#ee4266"/>
+    <style name="def:constant" foreground="#e5c71b"/>
+    <style name="def:preprocessor" foreground="#8b7f9a"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

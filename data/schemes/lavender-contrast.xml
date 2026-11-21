@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-lavender-contrast" _name="Lavender Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Lavender Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#e0ceed" background="#080709"/>
+    <style name="selection" background="#b657ff"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#100e12"/>
+    <style name="line-numbers" foreground="#e0ceed" background="#080709"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#614e6e"/>
+    <style name="def:string" foreground="#f5b0ef"/>
+    <style name="def:keyword" foreground="#8e6da6"/>
+    <style name="def:statement" foreground="#b657ff"/>
+    <style name="def:type" foreground="#a29dfa"/>
+    <style name="def:function" foreground="#f5b0ef"/>
+    <style name="def:decimal" foreground="#f25ae6"/>
+    <style name="def:floating-point" foreground="#f25ae6"/>
+    <style name="def:base-n-integer" foreground="#f25ae6"/>
+    <style name="def:special-constant" foreground="#b657ff"/>
+    <style name="def:constant" foreground="#f25ae6"/>
+    <style name="def:preprocessor" foreground="#886f99"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

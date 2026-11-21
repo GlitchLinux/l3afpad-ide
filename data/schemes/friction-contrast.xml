@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-friction-contrast" _name="Friction Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Friction Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#7e7b99" background="#0c0c0f"/>
+    <style name="selection" background="#6aa7a7"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#131317"/>
+    <style name="line-numbers" foreground="#7e7b99" background="#0c0c0f"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#545263"/>
+    <style name="def:string" foreground="#bc6b79"/>
+    <style name="def:keyword" foreground="#8d89a5"/>
+    <style name="def:statement" foreground="#6aa7a7"/>
+    <style name="def:type" foreground="#8d89a5"/>
+    <style name="def:function" foreground="#c2bed6"/>
+    <style name="def:decimal" foreground="#bcae6b"/>
+    <style name="def:floating-point" foreground="#bcae6b"/>
+    <style name="def:base-n-integer" foreground="#bcae6b"/>
+    <style name="def:special-constant" foreground="#6aa7a7"/>
+    <style name="def:constant" foreground="#bcae6b"/>
+    <style name="def:preprocessor" foreground="#78758d"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

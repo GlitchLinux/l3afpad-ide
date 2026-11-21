@@ -30,4 +30,6 @@ void set_view_scroll(void);
 gint check_text_modification(void);
 GtkWidget *create_text_view(void);
 
+void view_set_language_for_file(GtkTextBuffer *buffer, const gchar *filename);
+
 #endif /* _VIEW_H */

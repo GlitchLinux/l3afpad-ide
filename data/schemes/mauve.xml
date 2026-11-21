@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-mauve" _name="Mauve" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Mauve (rainglow)</_description>
+
+    <style name="text" foreground="#af92b2" background="#372638"/>
+    <style name="selection" background="#c89933"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#402c41"/>
+    <style name="line-numbers" foreground="#af92b2" background="#372638"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#614263"/>
+    <style name="def:string" foreground="#baa353"/>
+    <style name="def:keyword" foreground="#c89933"/>
+    <style name="def:statement" foreground="#74526c"/>
+    <style name="def:type" foreground="#c89933"/>
+    <style name="def:function" foreground="#dbd053"/>
+    <style name="def:decimal" foreground="#d8b436"/>
+    <style name="def:floating-point" foreground="#d8b436"/>
+    <style name="def:base-n-integer" foreground="#d8b436"/>
+    <style name="def:special-constant" foreground="#74526c"/>
+    <style name="def:constant" foreground="#d8b436"/>
+    <style name="def:preprocessor" foreground="#8e6191"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

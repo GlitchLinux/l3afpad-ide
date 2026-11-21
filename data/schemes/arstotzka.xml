@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-arstotzka" _name="Arstotzka" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Arstotzka (rainglow)</_description>
+
+    <style name="text" foreground="#edebe6" background="#332e2e"/>
+    <style name="selection" background="#516b6b"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#3b3535"/>
+    <style name="line-numbers" foreground="#edebe6" background="#332e2e"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#6b625b"/>
+    <style name="def:string" foreground="#a5e3d0"/>
+    <style name="def:keyword" foreground="#a2a797"/>
+    <style name="def:statement" foreground="#516b6b"/>
+    <style name="def:type" foreground="#a2a797"/>
+    <style name="def:function" foreground="#70807b"/>
+    <style name="def:decimal" foreground="#a5e3d0"/>
+    <style name="def:floating-point" foreground="#a5e3d0"/>
+    <style name="def:base-n-integer" foreground="#a5e3d0"/>
+    <style name="def:special-constant" foreground="#516b6b"/>
+    <style name="def:constant" foreground="#a5e3d0"/>
+    <style name="def:preprocessor" foreground="#938880"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

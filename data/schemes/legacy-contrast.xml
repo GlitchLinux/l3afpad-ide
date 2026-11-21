@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-legacy-contrast" _name="Legacy Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Legacy Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#aec2e0" background="#080a0c"/>
+    <style name="selection" background="#ff410d"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#0e1215"/>
+    <style name="line-numbers" foreground="#aec2e0" background="#080a0c"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#324357"/>
+    <style name="def:string" foreground="#ff410d"/>
+    <style name="def:keyword" foreground="#748aa6"/>
+    <style name="def:statement" foreground="#ffffff"/>
+    <style name="def:type" foreground="#267fb5"/>
+    <style name="def:function" foreground="#ffb20d"/>
+    <style name="def:decimal" foreground="#c7f026"/>
+    <style name="def:floating-point" foreground="#c7f026"/>
+    <style name="def:base-n-integer" foreground="#c7f026"/>
+    <style name="def:special-constant" foreground="#ffffff"/>
+    <style name="def:constant" foreground="#c7f026"/>
+    <style name="def:preprocessor" foreground="#4e6888"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

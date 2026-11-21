@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-heroku" _name="Heroku" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Heroku (rainglow)</_description>
+
+    <style name="text" foreground="#c8c7d5" background="#1b1b24"/>
+    <style name="selection" background="#7873ae"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#22222d"/>
+    <style name="line-numbers" foreground="#c8c7d5" background="#1b1b24"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#505067"/>
+    <style name="def:string" foreground="#a6fa62"/>
+    <style name="def:keyword" foreground="#7873ae"/>
+    <style name="def:statement" foreground="#7873ae"/>
+    <style name="def:type" foreground="#585480"/>
+    <style name="def:function" foreground="#ffffff"/>
+    <style name="def:decimal" foreground="#a6fa62"/>
+    <style name="def:floating-point" foreground="#a6fa62"/>
+    <style name="def:base-n-integer" foreground="#a6fa62"/>
+    <style name="def:special-constant" foreground="#7873ae"/>
+    <style name="def:constant" foreground="#a6fa62"/>
+    <style name="def:preprocessor" foreground="#727291"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

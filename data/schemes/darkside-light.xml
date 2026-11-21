@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-darkside-light" _name="Darkside Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Darkside Light (rainglow)</_description>
+
+    <style name="text" foreground="#222324" background="#e0e0e0"/>
+    <style name="selection" background="#ff4e50"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#e8e8e8"/>
+    <style name="line-numbers" foreground="#222324" background="#e0e0e0"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#494b4d"/>
+    <style name="def:string" foreground="#4b8e30"/>
+    <style name="def:keyword" foreground="#c1721d"/>
+    <style name="def:statement" foreground="#bf2713"/>
+    <style name="def:type" foreground="#15a2c1"/>
+    <style name="def:function" foreground="#4b8e30"/>
+    <style name="def:decimal" foreground="#7b5baf"/>
+    <style name="def:floating-point" foreground="#7b5baf"/>
+    <style name="def:base-n-integer" foreground="#7b5baf"/>
+    <style name="def:special-constant" foreground="#bf2713"/>
+    <style name="def:constant" foreground="#7b5baf"/>
+    <style name="def:preprocessor" foreground="#6e7174"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

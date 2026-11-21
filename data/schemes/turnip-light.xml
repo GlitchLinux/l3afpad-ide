@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-turnip-light" _name="Turnip Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Turnip Light (rainglow)</_description>
+
+    <style name="text" foreground="#444444" background="#ffffff"/>
+    <style name="selection" background="#487d76"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#444444" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#aaaaaa"/>
+    <style name="def:string" foreground="#e8da5e"/>
+    <style name="def:keyword" foreground="#92b55f"/>
+    <style name="def:statement" foreground="#487d76"/>
+    <style name="def:type" foreground="#92b55f"/>
+    <style name="def:function" foreground="#e8da5e"/>
+    <style name="def:decimal" foreground="#e8da5e"/>
+    <style name="def:floating-point" foreground="#e8da5e"/>
+    <style name="def:base-n-integer" foreground="#e8da5e"/>
+    <style name="def:special-constant" foreground="#487d76"/>
+    <style name="def:constant" foreground="#e8da5e"/>
+    <style name="def:preprocessor" foreground="#d0d0d0"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-slate-light" _name="Slate Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Slate Light (rainglow)</_description>
+
+    <style name="text" foreground="#19191f" background="#ffffff"/>
+    <style name="selection" background="#566981"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#19191f" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#8282a0"/>
+    <style name="def:string" foreground="#9eb2d9"/>
+    <style name="def:keyword" foreground="#566981"/>
+    <style name="def:statement" foreground="#89a7b1"/>
+    <style name="def:type" foreground="#566981"/>
+    <style name="def:function" foreground="#9aada7"/>
+    <style name="def:decimal" foreground="#9eb2d9"/>
+    <style name="def:floating-point" foreground="#9eb2d9"/>
+    <style name="def:base-n-integer" foreground="#9eb2d9"/>
+    <style name="def:special-constant" foreground="#89a7b1"/>
+    <style name="def:constant" foreground="#9eb2d9"/>
+    <style name="def:preprocessor" foreground="#adadc1"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

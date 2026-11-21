@@ -18,6 +18,7 @@
  */
 
 #include "l3afpad.h"
+#include <gtksourceview/gtksource.h>
 #include <gdk/gdkkeysyms.h>
 #include <string.h>
 
@@ -339,9 +340,19 @@ GtkWidget *create_text_view(void)
 {
 	GtkWidget *view;
 	GtkTextBuffer *buffer;
+	GtkSourceBuffer *sbuffer;
 
-	view = gtk_text_view_new();
-	buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(view));
+	/* GtkSourceView subclasses GtkTextView and GtkSourceBuffer subclasses
+	 * GtkTextBuffer, so all existing GTK_TEXT_VIEW()/GTK_TEXT_BUFFER() code
+	 * keeps working unchanged. */
+	sbuffer = gtk_source_buffer_new(NULL);
+	view = gtk_source_view_new_with_buffer(sbuffer);
+	buffer = GTK_TEXT_BUFFER(sbuffer);
+	g_object_unref(sbuffer);
+
+	/* syntax highlighting on by default (language set per-file on open) */
+	gtk_source_buffer_set_highlight_syntax(sbuffer, TRUE);
+	gtk_source_buffer_set_highlight_matching_brackets(sbuffer, TRUE);
 
 //	gtk_text_view_set_left_margin(GTK_TEXT_VIEW(view), 1);
 //	gtk_text_view_set_right_margin(GTK_TEXT_VIEW(view), 1);
@@ -382,4 +393,26 @@ GtkWidget *create_text_view(void)
 	linenum_init(view);
 
 	return view;
+}
+
+/* Detect and set the GtkSourceView language for a file, enabling syntax
+ * highlighting appropriate to its type. buffer must be a GtkSourceBuffer. */
+void view_set_language_for_file(GtkTextBuffer *buffer, const gchar *filename)
+{
+	GtkSourceLanguageManager *lm;
+	GtkSourceLanguage *lang = NULL;
+
+	if (!GTK_SOURCE_IS_BUFFER(buffer))
+		return;
+
+	lm = gtk_source_language_manager_get_default();
+	if (filename && *filename) {
+		gchar *content_type = NULL;
+		gboolean uncertain = FALSE;
+		content_type = g_content_type_guess(filename, NULL, 0, &uncertain);
+		lang = gtk_source_language_manager_guess_language(lm,
+			filename, uncertain ? NULL : content_type);
+		g_free(content_type);
+	}
+	gtk_source_buffer_set_language(GTK_SOURCE_BUFFER(buffer), lang);
 }

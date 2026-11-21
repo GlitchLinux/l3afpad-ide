@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-waste" _name="Waste" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Waste (rainglow)</_description>
+
+    <style name="text" foreground="#b1c7cc" background="#1b353a"/>
+    <style name="selection" background="#43bdb2"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#203f44"/>
+    <style name="line-numbers" foreground="#b1c7cc" background="#1b353a"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#3b6361"/>
+    <style name="def:string" foreground="#c5d671"/>
+    <style name="def:keyword" foreground="#f7a8a5"/>
+    <style name="def:statement" foreground="#bbd4be"/>
+    <style name="def:type" foreground="#43bdb2"/>
+    <style name="def:function" foreground="#f9d6bc"/>
+    <style name="def:decimal" foreground="#e4f279"/>
+    <style name="def:floating-point" foreground="#e4f279"/>
+    <style name="def:base-n-integer" foreground="#e4f279"/>
+    <style name="def:special-constant" foreground="#bbd4be"/>
+    <style name="def:constant" foreground="#e4f279"/>
+    <style name="def:preprocessor" foreground="#589390"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

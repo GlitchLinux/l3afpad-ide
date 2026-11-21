@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-penitent" _name="Penitent" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Penitent (rainglow)</_description>
+
+    <style name="text" foreground="#b9cec7" background="#1f352e"/>
+    <style name="selection" background="#e54334"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#253f36"/>
+    <style name="line-numbers" foreground="#b9cec7" background="#1f352e"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#497769"/>
+    <style name="def:string" foreground="#eac03a"/>
+    <style name="def:keyword" foreground="#e54334"/>
+    <style name="def:statement" foreground="#ea983a"/>
+    <style name="def:type" foreground="#e54334"/>
+    <style name="def:function" foreground="#11a361"/>
+    <style name="def:decimal" foreground="#ea663a"/>
+    <style name="def:floating-point" foreground="#ea663a"/>
+    <style name="def:base-n-integer" foreground="#ea663a"/>
+    <style name="def:special-constant" foreground="#ea983a"/>
+    <style name="def:constant" foreground="#ea663a"/>
+    <style name="def:preprocessor" foreground="#69a392"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

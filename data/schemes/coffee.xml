@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-coffee" _name="Coffee" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Coffee (rainglow)</_description>
+
+    <style name="text" foreground="#c4babb" background="#282122"/>
+    <style name="selection" background="#0a9f9b"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#302829"/>
+    <style name="line-numbers" foreground="#c4babb" background="#282122"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#5e4e50"/>
+    <style name="def:string" foreground="#a58163"/>
+    <style name="def:keyword" foreground="#80b2b0"/>
+    <style name="def:statement" foreground="#f5f3eb"/>
+    <style name="def:type" foreground="#0a9f9b"/>
+    <style name="def:function" foreground="#e77757"/>
+    <style name="def:decimal" foreground="#cc8f5d"/>
+    <style name="def:floating-point" foreground="#cc8f5d"/>
+    <style name="def:base-n-integer" foreground="#cc8f5d"/>
+    <style name="def:special-constant" foreground="#f5f3eb"/>
+    <style name="def:constant" foreground="#cc8f5d"/>
+    <style name="def:preprocessor" foreground="#887174"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

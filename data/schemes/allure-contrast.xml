@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-allure-contrast" _name="Allure Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Allure Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#c0ccdb" background="#17191c"/>
+    <style name="selection" background="#5da892"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#1e2124"/>
+    <style name="line-numbers" foreground="#c0ccdb" background="#17191c"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#76818e"/>
+    <style name="def:string" foreground="#cec86f"/>
+    <style name="def:keyword" foreground="#5da892"/>
+    <style name="def:statement" foreground="#e4d294"/>
+    <style name="def:type" foreground="#5da892"/>
+    <style name="def:function" foreground="#ffffff"/>
+    <style name="def:decimal" foreground="#cea36f"/>
+    <style name="def:floating-point" foreground="#cea36f"/>
+    <style name="def:base-n-integer" foreground="#cea36f"/>
+    <style name="def:special-constant" foreground="#e4d294"/>
+    <style name="def:constant" foreground="#cea36f"/>
+    <style name="def:preprocessor" foreground="#a0a8b1"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

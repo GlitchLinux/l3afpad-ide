@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-jewel-contrast" _name="Jewel Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Jewel Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#c0ccdb" background="#141619"/>
+    <style name="selection" background="#c262c4"/>
+    <style name="cursor" foreground="#ffffff"/>
+    <style name="current-line" background="#1b1d21"/>
+    <style name="line-numbers" foreground="#c0ccdb" background="#141619"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#76818e"/>
+    <style name="def:string" foreground="#cec86f"/>
+    <style name="def:keyword" foreground="#6299c4"/>
+    <style name="def:statement" foreground="#c262c4"/>
+    <style name="def:type" foreground="#6299c4"/>
+    <style name="def:function" foreground="#62c47c"/>
+    <style name="def:decimal" foreground="#cea36f"/>
+    <style name="def:floating-point" foreground="#cea36f"/>
+    <style name="def:base-n-integer" foreground="#cea36f"/>
+    <style name="def:special-constant" foreground="#c262c4"/>
+    <style name="def:constant" foreground="#cea36f"/>
+    <style name="def:preprocessor" foreground="#a0a8b1"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

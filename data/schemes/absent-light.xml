@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-absent-light" _name="Absent Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Absent Light (rainglow)</_description>
+
+    <style name="text" foreground="#465360" background="#ffffff"/>
+    <style name="selection" background="#228a96"/>
+    <style name="cursor" foreground="#333333"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#465360" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#aeb9c4"/>
+    <style name="def:string" foreground="#478e5f"/>
+    <style name="def:keyword" foreground="#228a96"/>
+    <style name="def:statement" foreground="#6ba77f"/>
+    <style name="def:type" foreground="#228a96"/>
+    <style name="def:function" foreground="#465360"/>
+    <style name="def:decimal" foreground="#61bcc6"/>
+    <style name="def:floating-point" foreground="#61bcc6"/>
+    <style name="def:base-n-integer" foreground="#61bcc6"/>
+    <style name="def:special-constant" foreground="#6ba77f"/>
+    <style name="def:constant" foreground="#61bcc6"/>
+    <style name="def:preprocessor" foreground="#dadfe4"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

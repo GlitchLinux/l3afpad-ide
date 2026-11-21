@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-chocolate-contrast" _name="Chocolate Contrast" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Chocolate Contrast (rainglow)</_description>
+
+    <style name="text" foreground="#ffffff" background="#150f08"/>
+    <style name="selection" background="#8b6e46"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#20170c"/>
+    <style name="line-numbers" foreground="#ffffff" background="#150f08"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#795431"/>
+    <style name="def:string" foreground="#f7a21b"/>
+    <style name="def:keyword" foreground="#b99768"/>
+    <style name="def:statement" foreground="#ccb697"/>
+    <style name="def:type" foreground="#8b6e46"/>
+    <style name="def:function" foreground="#e2cdb0"/>
+    <style name="def:decimal" foreground="#f7a21b"/>
+    <style name="def:floating-point" foreground="#f7a21b"/>
+    <style name="def:base-n-integer" foreground="#f7a21b"/>
+    <style name="def:special-constant" foreground="#ccb697"/>
+    <style name="def:constant" foreground="#f7a21b"/>
+    <style name="def:preprocessor" foreground="#af7a47"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

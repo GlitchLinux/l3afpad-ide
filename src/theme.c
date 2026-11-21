@@ -1,12 +1,17 @@
 /*
  *  L3afpad - GTK+ based simple text editor
- *  Color theme module (rainglow base-color presets)
+ *  Color theme module (rainglow themes as GtkSourceView style schemes)
+ *
+ *  Applies real syntax-highlighting color schemes to the GtkSourceBuffer.
+ *  Builds a "Themes" menu (Dark/Light/Contrast submenus) with live preview
+ *  on hover, a Default (no scheme) entry, and commit on click.
  *
  *  Released under GPL-2.0, same as l3afpad.
  */
 
 #include "l3afpad.h"
 #include "theme.h"
+#include <gtksourceview/gtksource.h>
 #include <string.h>
 
 #ifndef PKGDATADIR
@@ -14,35 +19,74 @@
 #endif
 
 typedef struct {
-	gchar *name;
+	gchar *slug;    /* scheme slug; scheme id is "rainglow-<slug>" */
+	gchar *name;    /* display name */
 	gchar *group;   /* Dark | Light | Contrast */
-	gchar *bg, *fg, *sel, *caret, *linehl;
 } Theme;
 
-static GArray      *themes       = NULL;  /* array of Theme */
-static GtkWidget   *theme_editor = NULL;  /* the GtkTextView */
-static GtkCssProvider *provider  = NULL;
-static gchar       *cur_name     = NULL;  /* committed (persisted) theme   */
-static gchar       *saved_name   = NULL;  /* theme active when menu opened */
-static gboolean     committed_in_menu = FALSE;
+static GArray    *themes       = NULL;
+static GtkWidget *theme_editor = NULL;   /* the GtkSourceView */
+static gchar     *cur_name     = NULL;   /* committed theme name, or NULL */
+static gchar     *saved_name   = NULL;   /* theme active when menu opened  */
+static gboolean   committed_in_menu = FALSE;
+static GtkSourceStyleSchemeManager *scheme_mgr = NULL;
 
 /* ------------------------------------------------------------------ */
-/* Load the table                                                     */
+/* Locate the schemes directory (relative to the executable).         */
 /* ------------------------------------------------------------------ */
+static gchar *find_schemes_dir(void)
+{
+	const gchar *env = g_getenv("L3AFPAD_SCHEMES");
+	gchar *exe, *exedir, *cand;
+	gint i;
+
+	if (env && g_file_test(env, G_FILE_TEST_IS_DIR))
+		return g_strdup(env);
+
+	exe = g_file_read_link("/proc/self/exe", NULL);
+	if (exe) {
+		exedir = g_path_get_dirname(exe);
+		const gchar *rel[] = {
+			"../share/l3afpad/schemes",
+			"../data/schemes",
+			"data/schemes",
+			NULL
+		};
+		for (i = 0; rel[i]; i++) {
+			cand = g_build_filename(exedir, rel[i], NULL);
+			if (g_file_test(cand, G_FILE_TEST_IS_DIR)) {
+				g_free(exe); g_free(exedir);
+				return cand;
+			}
+			g_free(cand);
+		}
+		g_free(exe); g_free(exedir);
+	}
+
+	{
+		const gchar *fixed[] = {
+			PKGDATADIR "/schemes",
+			"/usr/share/l3afpad/schemes",
+			"/usr/local/share/l3afpad/schemes",
+			NULL
+		};
+		for (i = 0; fixed[i]; i++)
+			if (g_file_test(fixed[i], G_FILE_TEST_IS_DIR))
+				return g_strdup(fixed[i]);
+	}
+	return NULL;
+}
+
+/* Locate themes.tsv (same strategy, file). */
 static gchar *find_table(void)
 {
 	const gchar *env = g_getenv("L3AFPAD_THEMES");
-	gchar *exe = NULL, *exedir = NULL, *p;
-	gchar *cand;
+	gchar *exe, *exedir, *cand;
 	gint i;
 
-	/* 1) explicit override */
 	if (env && g_file_test(env, G_FILE_TEST_IS_REGULAR))
 		return g_strdup(env);
 
-	/* 2) relative to the executable, so cwd does not matter.
-	 *    installed:  <exedir>/../share/l3afpad/themes.tsv
-	 *    source:     <exedir>/../data/themes.tsv   (src/l3afpad -> ../data) */
 	exe = g_file_read_link("/proc/self/exe", NULL);
 	if (exe) {
 		exedir = g_path_get_dirname(exe);
@@ -62,8 +106,6 @@ static gchar *find_table(void)
 		}
 		g_free(exe); g_free(exedir);
 	}
-
-	/* 3) fixed install locations */
 	{
 		const gchar *fixed[] = {
 			PKGDATADIR "/themes.tsv",
@@ -75,19 +117,15 @@ static gchar *find_table(void)
 			if (g_file_test(fixed[i], G_FILE_TEST_IS_REGULAR))
 				return g_strdup(fixed[i]);
 	}
-
-	/* 4) last resort: cwd-relative */
-	if (g_file_test("data/themes.tsv", G_FILE_TEST_IS_REGULAR))
-		return g_strdup("data/themes.tsv");
-
-	(void)p;
 	return NULL;
 }
 
+/* ------------------------------------------------------------------ */
+/* Load the table + register the scheme search path                   */
+/* ------------------------------------------------------------------ */
 gint theme_load_table(void)
 {
-	gchar *path, *contents = NULL;
-	gsize len;
+	gchar *path, *contents = NULL, *schemes_dir;
 	gchar **lines;
 	gint i, n = 0;
 
@@ -96,10 +134,20 @@ gint theme_load_table(void)
 
 	themes = g_array_new(FALSE, FALSE, sizeof(Theme));
 
+	/* register schemes dir with GtkSourceView */
+	scheme_mgr = gtk_source_style_scheme_manager_new();
+	schemes_dir = find_schemes_dir();
+	if (schemes_dir) {
+		const gchar *dirs[] = { schemes_dir, NULL };
+		gtk_source_style_scheme_manager_set_search_path(
+			scheme_mgr, (gchar **) dirs);
+		g_free(schemes_dir);
+	}
+
 	path = find_table();
 	if (!path)
 		return 0;
-	if (!g_file_get_contents(path, &contents, &len, NULL)) {
+	if (!g_file_get_contents(path, &contents, NULL, NULL)) {
 		g_free(path);
 		return 0;
 	}
@@ -111,16 +159,12 @@ gint theme_load_table(void)
 		gchar **f;
 		if (!*lines[i])
 			continue;
-		f = g_strsplit(lines[i], "|", 7);
-		if (g_strv_length(f) == 7) {
+		f = g_strsplit(lines[i], "|", 3);
+		if (g_strv_length(f) == 3) {
 			Theme t;
-			t.name   = g_strdup(f[0]);
-			t.group  = g_strdup(f[1]);
-			t.bg     = g_strdup(f[2]);
-			t.fg     = g_strdup(f[3]);
-			t.sel    = g_strdup(f[4]);
-			t.caret  = g_strdup(f[5]);
-			t.linehl = g_strdup(f[6]);
+			t.slug  = g_strdup(f[0]);
+			t.name  = g_strdup(f[1]);
+			t.group = g_strdup(f[2]);
 			g_array_append_val(themes, t);
 			n++;
 		}
@@ -131,9 +175,8 @@ gint theme_load_table(void)
 }
 
 /* ------------------------------------------------------------------ */
-/* Apply colors via CSS                                               */
+/* Apply a scheme                                                     */
 /* ------------------------------------------------------------------ */
-/* Find a theme by name (internal). */
 static const Theme *theme_find(const gchar *name)
 {
 	guint i;
@@ -147,57 +190,37 @@ static const Theme *theme_find(const gchar *name)
 	return NULL;
 }
 
-/* Visually apply colors only (does not change cur_name). Pass NULL to
- * remove the provider and restore the default GTK colors. */
-static void apply_colors(const Theme *t)
+/* Visually apply a theme's scheme (does not change cur_name).
+ * Pass NULL to clear the scheme (default look). */
+static void apply_scheme(const Theme *t)
 {
-	gchar *css;
-	GtkStyleContext *ctx;
+	GtkSourceBuffer *buf;
+	GtkSourceStyleScheme *scheme = NULL;
 
-	if (!theme_editor)
+	if (!theme_editor || !GTK_SOURCE_IS_VIEW(theme_editor))
 		return;
+	buf = GTK_SOURCE_BUFFER(gtk_text_view_get_buffer(
+		GTK_TEXT_VIEW(theme_editor)));
 
-	ctx = gtk_widget_get_style_context(theme_editor);
-
-	if (!t) {
-		/* restore default: drop our provider */
-		if (provider) {
-			gtk_style_context_remove_provider(ctx,
-				GTK_STYLE_PROVIDER(provider));
-			g_object_unref(provider);
-			provider = NULL;
-		}
-		return;
+	if (t && scheme_mgr) {
+		gchar *id = g_strdup_printf("rainglow-%s", t->slug);
+		scheme = gtk_source_style_scheme_manager_get_scheme(scheme_mgr, id);
+		g_free(id);
 	}
-
-	if (!provider) {
-		provider = gtk_css_provider_new();
-		gtk_style_context_add_provider(ctx,
-			GTK_STYLE_PROVIDER(provider),
-			GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-	}
-
-	css = g_strdup_printf(
-		"textview, textview text {"
-		"  background-color: %s;"
-		"  color: %s;"
-		"  caret-color: %s;"
-		"}"
-		"textview text selection {"
-		"  background-color: %s;"
-		"  color: %s;"
-		"}",
-		t->bg, t->fg, t->caret, t->sel, t->fg);
-	gtk_css_provider_load_from_data(provider, css, -1, NULL);
-	g_free(css);
+	gtk_source_buffer_set_style_scheme(buf, scheme);
 }
 
-/* Commit a theme: apply it and remember it as the persisted choice. */
+/* Commit a theme. */
 static void apply_theme(const Theme *t)
 {
-	apply_colors(t);
+	apply_scheme(t);
 	g_free(cur_name);
 	cur_name = t ? g_strdup(t->name) : NULL;
+}
+
+void theme_set_view(GtkWidget *editor_view)
+{
+	theme_editor = editor_view;
 }
 
 gboolean theme_apply_by_name(const gchar *name)
@@ -215,62 +238,45 @@ const gchar *theme_current(void)
 }
 
 /* ------------------------------------------------------------------ */
-/* Menu                                                               */
+/* Menu handlers                                                      */
 /* ------------------------------------------------------------------ */
-/* Hover a theme item: preview its colors (not committed). */
 static void on_theme_select(GtkMenuItem *item, gpointer data)
 {
-	const Theme *t = data;
-	apply_colors(t);
+	apply_scheme((const Theme *) data);   /* preview */
 }
-
-/* Click a theme item: commit it as the chosen theme. */
 static void on_theme_item(GtkMenuItem *item, gpointer data)
 {
-	const Theme *t = data;
-	apply_theme(t);
+	apply_theme((const Theme *) data);    /* commit  */
 	committed_in_menu = TRUE;
 }
-
-/* The "Default" item: clear any theme and restore default colors. */
 static void on_theme_default_select(GtkMenuItem *item, gpointer data)
 {
-	apply_colors(NULL);          /* preview the default look */
+	apply_scheme(NULL);
 }
 static void on_theme_default(GtkMenuItem *item, gpointer data)
 {
-	apply_theme(NULL);           /* commit "no theme" */
+	apply_theme(NULL);
 	committed_in_menu = TRUE;
 }
-
-/* Menu opened: remember the committed theme so we can revert if the user
- * only browses (previews) without clicking. */
 static void on_root_menu_show(GtkWidget *w, gpointer data)
 {
 	g_free(saved_name);
 	saved_name = cur_name ? g_strdup(cur_name) : NULL;
 	committed_in_menu = FALSE;
 }
-
-/* Menu closed: if nothing was committed, revert to the theme that was
- * active when the menu opened (undo the hover previews). */
 static void on_root_menu_hide(GtkWidget *w, gpointer data)
 {
 	if (committed_in_menu)
 		return;
-	if (saved_name) {
-		const Theme *t = theme_find(saved_name);
-		apply_colors(t);         /* restore previewed-away theme */
-	} else {
-		apply_colors(NULL);      /* was default */
-	}
+	if (saved_name)
+		apply_scheme(theme_find(saved_name));
+	else
+		apply_scheme(NULL);
 }
 
-void theme_set_view(GtkWidget *editor_view)
-{
-	theme_editor = editor_view;
-}
-
+/* ------------------------------------------------------------------ */
+/* Build the menu                                                     */
+/* ------------------------------------------------------------------ */
 GtkWidget *theme_build_menu(GtkWidget *editor_view)
 {
 	GtkWidget *themes_item, *root_menu;
@@ -285,7 +291,7 @@ GtkWidget *theme_build_menu(GtkWidget *editor_view)
 	root_menu   = gtk_menu_new();
 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(themes_item), root_menu);
 
-	/* Default (no theme) entry at the very top */
+	/* Default (no scheme) at the top */
 	{
 		GtkWidget *mi_default = gtk_menu_item_new_with_label(_("Default"));
 		g_signal_connect(mi_default, "select",
@@ -299,11 +305,8 @@ GtkWidget *theme_build_menu(GtkWidget *editor_view)
 		gtk_widget_show(sep);
 	}
 
-	/* revert previews if the menu is closed without a click */
-	g_signal_connect(root_menu, "show",
-		G_CALLBACK(on_root_menu_show), NULL);
-	g_signal_connect(root_menu, "hide",
-		G_CALLBACK(on_root_menu_hide), NULL);
+	g_signal_connect(root_menu, "show", G_CALLBACK(on_root_menu_show), NULL);
+	g_signal_connect(root_menu, "hide", G_CALLBACK(on_root_menu_hide), NULL);
 
 	sub_dark     = gtk_menu_new();
 	sub_light    = gtk_menu_new();
@@ -330,10 +333,8 @@ GtkWidget *theme_build_menu(GtkWidget *editor_view)
 			target = sub_light;
 		else if (strcmp(t->group, "Contrast") == 0)
 			target = sub_contrast;
-		g_signal_connect(it, "select",
-			G_CALLBACK(on_theme_select), t);
-		g_signal_connect(it, "activate",
-			G_CALLBACK(on_theme_item), t);
+		g_signal_connect(it, "select", G_CALLBACK(on_theme_select), t);
+		g_signal_connect(it, "activate", G_CALLBACK(on_theme_item), t);
 		gtk_menu_shell_append(GTK_MENU_SHELL(target), it);
 		gtk_widget_show(it);
 	}

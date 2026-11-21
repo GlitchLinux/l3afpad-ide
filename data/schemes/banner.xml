@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-banner" _name="Banner" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Banner (rainglow)</_description>
+
+    <style name="text" foreground="#c5bedd" background="#1d1a26"/>
+    <style name="selection" background="#7cd827"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#24202f"/>
+    <style name="line-numbers" foreground="#c5bedd" background="#1d1a26"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#594b87"/>
+    <style name="def:string" foreground="#cded1c"/>
+    <style name="def:keyword" foreground="#a6ef61"/>
+    <style name="def:statement" foreground="#a25cdb"/>
+    <style name="def:type" foreground="#7cd827"/>
+    <style name="def:function" foreground="#ffffff"/>
+    <style name="def:decimal" foreground="#cded1c"/>
+    <style name="def:floating-point" foreground="#cded1c"/>
+    <style name="def:base-n-integer" foreground="#cded1c"/>
+    <style name="def:special-constant" foreground="#a25cdb"/>
+    <style name="def:constant" foreground="#cded1c"/>
+    <style name="def:preprocessor" foreground="#7e6faf"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

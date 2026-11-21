@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-service" _name="Service" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Service (rainglow)</_description>
+
+    <style name="text" foreground="#e8e1de" background="#252727"/>
+    <style name="selection" background="#a2d66b"/>
+    <style name="cursor" foreground="#f8f8f0"/>
+    <style name="current-line" background="#2c2f2f"/>
+    <style name="line-numbers" foreground="#e8e1de" background="#252727"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#4b5656"/>
+    <style name="def:string" foreground="#a2d66b"/>
+    <style name="def:keyword" foreground="#a0afa1"/>
+    <style name="def:statement" foreground="#a0afa1"/>
+    <style name="def:type" foreground="#6c8375"/>
+    <style name="def:function" foreground="#f0f5f5"/>
+    <style name="def:decimal" foreground="#88c448"/>
+    <style name="def:floating-point" foreground="#88c448"/>
+    <style name="def:base-n-integer" foreground="#88c448"/>
+    <style name="def:special-constant" foreground="#a0afa1"/>
+    <style name="def:constant" foreground="#88c448"/>
+    <style name="def:preprocessor" foreground="#6f7f7f"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

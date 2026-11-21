@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-stealth-light" _name="Stealth Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Stealth Light (rainglow)</_description>
+
+    <style name="text" foreground="#cccccc" background="#ffffff"/>
+    <style name="selection" background="#ffffff"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#cccccc" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#dddddd"/>
+    <style name="def:string" foreground="#888888"/>
+    <style name="def:keyword" foreground="#eeeeee"/>
+    <style name="def:statement" foreground="#dddddd"/>
+    <style name="def:type" foreground="#bbbbbb"/>
+    <style name="def:function" foreground="#aaaaaa"/>
+    <style name="def:decimal" foreground="#888888"/>
+    <style name="def:floating-point" foreground="#888888"/>
+    <style name="def:base-n-integer" foreground="#888888"/>
+    <style name="def:special-constant" foreground="#dddddd"/>
+    <style name="def:constant" foreground="#888888"/>
+    <style name="def:preprocessor" foreground="#ffffff"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-keen-light" _name="Keen Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Keen Light (rainglow)</_description>
+
+    <style name="text" foreground="#111111" background="#cccccc"/>
+    <style name="selection" background="#8767b7"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#d4d4d4"/>
+    <style name="line-numbers" foreground="#111111" background="#cccccc"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#6b8eaf"/>
+    <style name="def:string" foreground="#7c9669"/>
+    <style name="def:keyword" foreground="#6f8b94"/>
+    <style name="def:statement" foreground="#8767b7"/>
+    <style name="def:type" foreground="#6f8b94"/>
+    <style name="def:function" foreground="#7c9669"/>
+    <style name="def:decimal" foreground="#7c9669"/>
+    <style name="def:floating-point" foreground="#7c9669"/>
+    <style name="def:base-n-integer" foreground="#7c9669"/>
+    <style name="def:special-constant" foreground="#8767b7"/>
+    <style name="def:constant" foreground="#7c9669"/>
+    <style name="def:preprocessor" foreground="#9db4ca"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

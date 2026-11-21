@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-waste-light" _name="Waste Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Waste Light (rainglow)</_description>
+
+    <style name="text" foreground="#444444" background="#ffffff"/>
+    <style name="selection" background="#43bdb2"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#ffffff"/>
+    <style name="line-numbers" foreground="#444444" background="#ffffff"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#aaaaaa"/>
+    <style name="def:string" foreground="#c5d671"/>
+    <style name="def:keyword" foreground="#f7a8a5"/>
+    <style name="def:statement" foreground="#95ad97"/>
+    <style name="def:type" foreground="#43bdb2"/>
+    <style name="def:function" foreground="#d3b298"/>
+    <style name="def:decimal" foreground="#a9b553"/>
+    <style name="def:floating-point" foreground="#a9b553"/>
+    <style name="def:base-n-integer" foreground="#a9b553"/>
+    <style name="def:special-constant" foreground="#95ad97"/>
+    <style name="def:constant" foreground="#a9b553"/>
+    <style name="def:preprocessor" foreground="#d0d0d0"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>

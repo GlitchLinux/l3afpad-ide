@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="rainglow-tron-light" _name="Tron Light" version="1.0">
+  <author>rainglow (Dayle Rees), converted for l3afpad</author>
+  <_description>Tron Light (rainglow)</_description>
+
+    <style name="text" foreground="#222222" background="#d7e5ed"/>
+    <style name="selection" background="#267fb5"/>
+    <style name="cursor" foreground="#222222"/>
+    <style name="current-line" background="#e2ecf2"/>
+    <style name="line-numbers" foreground="#222222" background="#d7e5ed"/>
+    <style name="bracket-match" bold="true"/>
+
+    <style name="def:comment" foreground="#324357"/>
+    <style name="def:string" foreground="#6ee2ff"/>
+    <style name="def:keyword" foreground="#748aa6"/>
+    <style name="def:statement" foreground="#89bddd"/>
+    <style name="def:type" foreground="#267fb5"/>
+    <style name="def:function" foreground="#ffffff"/>
+    <style name="def:decimal" foreground="#6ee2ff"/>
+    <style name="def:floating-point" foreground="#6ee2ff"/>
+    <style name="def:base-n-integer" foreground="#6ee2ff"/>
+    <style name="def:special-constant" foreground="#89bddd"/>
+    <style name="def:constant" foreground="#6ee2ff"/>
+    <style name="def:preprocessor" foreground="#4e6888"/>
+    <style name="def:error" foreground="#cf433e"/>
+</style-scheme>
