@@ -24,3 +24,21 @@ po/POTFILES
 # build objects
 *.o
 src/l3afpad
+# autotools generated (added by automake --add-missing)
+INSTALL
+compile
+src/.deps/
+src/.dirstamp
+data/l3afpad.desktop
+ABOUT-NLS
+config.rpath
+m4/
+po/Makevars.template
+po/Rules-quot
+po/*.header
+po/*.sed
+po/boldquot.sed
+po/en@*.header
+po/insert-header.sin
+po/quot.sed
+po/remove-potcdate.sin

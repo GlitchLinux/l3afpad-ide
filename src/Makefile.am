@@ -5,6 +5,7 @@ AM_CPPFLAGS = -DICONDIR=\"$(datadir)/pixmaps\"
 l3afpad_SOURCES = \
 	l3afpad.h main.c \
 	window.h window.c \
+	sidebar.h sidebar.c \
 	menu.h menu.c \
 	callback.h callback.c \
 	view.h view.c \

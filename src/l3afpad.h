@@ -49,6 +49,7 @@
 #endif
 
 #include "window.h"
+#include "sidebar.h"
 #include "menu.h"
 #include "callback.h"
 #include "view.h"

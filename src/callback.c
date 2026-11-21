@@ -35,6 +35,11 @@ static void set_selection_bound(GtkTextBuffer *buffer, gint start, gint end)
 	gtk_text_buffer_move_mark_by_name(buffer, "selection_bound", &start_iter);
 }
 
+void on_view_sidebar(void)
+{
+	sidebar_toggle();
+}
+
 void on_file_new(void)
 {
 	gchar *comline;

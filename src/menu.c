@@ -31,12 +31,13 @@ static GtkWidget *menu_item_delete;
 
 static GtkActionEntry menu_items[] =
 {
-	{ "File", NULL, N_("_File"), NULL, NULL, NULL },
+	{ "File", NULL, N_("_Files"), NULL, NULL, NULL },
 	{ "Edit", NULL, N_("_Edit"), NULL, NULL, NULL },
 	{ "Search", NULL, N_("_Search"), NULL, NULL, NULL },
 	{ "Options", NULL, N_("_Options"), NULL, NULL, NULL },
 	{ "Help", NULL, N_("_Help"), NULL, NULL, NULL },
 	{ "New", GTK_STOCK_NEW, N_("_New"), "<control>N", NULL, G_CALLBACK(on_file_new) },
+	{ "Sidebar", NULL, N_("Show Side_bar"), "F9", NULL, G_CALLBACK(on_view_sidebar) },
 	{ "Open", GTK_STOCK_OPEN, N_("_Open..."), "<control>O", NULL, G_CALLBACK(on_file_open) },
 	{ "Save", GTK_STOCK_SAVE, N_("_Save"), "<control>S", NULL, G_CALLBACK(on_file_save) },
 	{ "SaveAs", GTK_STOCK_SAVE_AS, N_("Save _As..."), "<shift><control>S", NULL, G_CALLBACK(on_file_save_as) },
@@ -78,6 +79,8 @@ static const gchar *ui_info =
 "<ui>"
 "  <menubar name='M'>"
 "    <menu action='File'>"
+"      <menuitem action='Sidebar'/>"
+"      <separator/>"
 "      <menuitem action='New'/>"
 "      <menuitem action='Open'/>"
 "      <menuitem action='Save'/>"

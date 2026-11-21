@@ -28,6 +28,8 @@ MainWin *create_main_window(void)
 {
 	GtkWidget *vbox;
 	GtkWidget *sw;
+	GtkWidget *paned;
+	GtkWidget *sidebar;
 
 	MainWin *mw = g_malloc(sizeof(MainWin));
 
@@ -48,6 +50,10 @@ MainWin *create_main_window(void)
 	mw->menubar = create_menu_bar(mw->window);
 	gtk_box_pack_start(GTK_BOX(vbox), gtk_ui_manager_get_widget(mw->menubar, "/M"), FALSE, FALSE, 0);
 
+	/* horizontal paned: [ sidebar | editor ] */
+	paned = gtk_paned_new(GTK_ORIENTATION_HORIZONTAL);
+	gtk_box_pack_start(GTK_BOX(vbox), paned, TRUE, TRUE, 0);
+
 	sw = gtk_scrolled_window_new(NULL, NULL);
 	gtk_widget_set_hexpand (sw, TRUE);
 	gtk_widget_set_vexpand (sw, TRUE);
@@ -55,11 +61,15 @@ MainWin *create_main_window(void)
 		GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(sw),
 		GTK_SHADOW_IN);
-	gtk_box_pack_start(GTK_BOX(vbox), sw, TRUE, TRUE, 0);
 
 	mw->view = create_text_view();
 	gtk_container_add(GTK_CONTAINER(sw), mw->view);
 	mw->buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(mw->view));
+
+	/* sidebar on the left (hidden until toggled), editor on the right */
+	sidebar = sidebar_create(mw->view);
+	gtk_paned_pack1(GTK_PANED(paned), sidebar, FALSE, FALSE);
+	gtk_paned_pack2(GTK_PANED(paned), sw, TRUE, FALSE);
 
 	return mw;
 }

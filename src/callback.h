@@ -21,6 +21,7 @@
 #define _CALLBACK_H
 
 void on_file_new(void);
+void on_view_sidebar(void);
 void on_file_open(void);
 gint on_file_save(void);
 gint on_file_save_as(void);
