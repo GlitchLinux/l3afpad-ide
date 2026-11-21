@@ -1,12 +1,12 @@
 #!/bin/bash
 # Build an installable .deb of the l3afpad remaster (sidebar fork).
-# Produces: /FILES/GLITCH-SOFTWARE/l3afpad-remaster-2026-v0.4.deb
+# Produces: /FILES/GLITCH-SOFTWARE/l3afpad-remaster-2026-v0.5.deb
 set -e
 
 SRC="/FILES/GLITCH-SOFTWARE/l3afpad-linux"
 WORK="/tmp/l3af-deb-build"
-OUT="/FILES/GLITCH-SOFTWARE/l3afpad-remaster-2026-v0.4.deb"
-PKGVER="0.8.18.1.11-remaster2026.0.4"
+OUT="/FILES/GLITCH-SOFTWARE/l3afpad-remaster-2026-v0.5.deb"
+PKGVER="0.8.18.1.11-remaster2026.0.5"
 
 rm -rf "$WORK"
 mkdir -p "$WORK"
@@ -30,7 +30,7 @@ export DEBEMAIL="x@glitchlinux.wtf"
 export DEBFULLNAME="GlitchLinux"
 dch --create --package l3afpad-remaster -v "$PKGVER" \
     --distribution unstable \
-    "Remaster 2026 v0.4: theme live-preview on hover + Default entry; fixed theme loading (exe-relative). v0.3: JSON settings, icons. v0.1: sidebar file browser (text-file
+    "Remaster 2026 v0.5: real syntax highlighting (GtkSourceView port), 326 themes as style schemes. v0.4: theme preview. v0.1: sidebar file browser (text-file
     listing, folder navigation, single-buffer open). Sidebar extends the
     window outward. Files menu trimmed (no Statistics/Print)." \
     2>/dev/null || {
@@ -38,7 +38,7 @@ dch --create --package l3afpad-remaster -v "$PKGVER" \
       cat > /tmp/newch <<EOF
 l3afpad-remaster ($PKGVER) unstable; urgency=medium
 
-  * Remaster 2026 v0.4: theme live-preview on hover + Default entry; fixed theme loading (exe-relative). v0.3: JSON settings, icons. v0.1: sidebar file browser (text-file
+  * Remaster 2026 v0.5: real syntax highlighting (GtkSourceView port), 326 themes as style schemes. v0.4: theme preview. v0.1: sidebar file browser (text-file
     listing, folder navigation, single-buffer open). Sidebar extends the
     window outward. Files menu trimmed (no Statistics/Print).
 
