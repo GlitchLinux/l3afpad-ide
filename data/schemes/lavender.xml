@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-lavender" _name="Lavender" version="1.0">
+<style-scheme id="rainglow-lavender" name="Lavender" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Lavender (rainglow)</_description>
+  <description>Lavender (rainglow)</description>
 
     <style name="text" foreground="#e0ceed" background="#29222e"/>
     <style name="selection" background="#b657ff"/>

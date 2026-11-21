@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-darkside" _name="Darkside" version="1.0">
+<style-scheme id="rainglow-darkside" name="Darkside" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Darkside (rainglow)</_description>
+  <description>Darkside (rainglow)</description>
 
     <style name="text" foreground="#bababa" background="#222324"/>
     <style name="selection" background="#ff4e50"/>

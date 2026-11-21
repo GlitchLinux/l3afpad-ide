@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-mellow-contrast" _name="Mellow Contrast" version="1.0">
+<style-scheme id="rainglow-mellow-contrast" name="Mellow Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Mellow Contrast (rainglow)</_description>
+  <description>Mellow Contrast (rainglow)</description>
 
     <style name="text" foreground="#f8f8f2" background="#0b0a09"/>
     <style name="selection" background="#f55d79"/>

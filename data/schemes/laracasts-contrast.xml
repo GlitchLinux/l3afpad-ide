@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-laracasts-contrast" _name="Laracasts Contrast" version="1.0">
+<style-scheme id="rainglow-laracasts-contrast" name="Laracasts Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Laracasts Contrast (rainglow)</_description>
+  <description>Laracasts Contrast (rainglow)</description>
 
     <style name="text" foreground="#c0ccdb" background="#292d33"/>
     <style name="selection" background="#00b1b3"/>

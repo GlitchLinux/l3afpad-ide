@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-storm-light" _name="Storm Light" version="1.0">
+<style-scheme id="rainglow-storm-light" name="Storm Light" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Storm Light (rainglow)</_description>
+  <description>Storm Light (rainglow)</description>
 
     <style name="text" foreground="#092327" background="#dee4e5"/>
     <style name="selection" background="#00a9a5"/>

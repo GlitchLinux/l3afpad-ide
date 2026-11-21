@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-hub-light" _name="Hub Light" version="1.0">
+<style-scheme id="rainglow-hub-light" name="Hub Light" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Hub Light (rainglow)</_description>
+  <description>Hub Light (rainglow)</description>
 
     <style name="text" foreground="#24292e" background="#ffffff"/>
     <style name="selection" background="#077cf9"/>

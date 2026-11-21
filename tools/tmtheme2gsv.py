@@ -84,9 +84,9 @@ def convert(path, outdir):
 
     L = []
     L.append('<?xml version="1.0" encoding="UTF-8"?>')
-    L.append('<style-scheme id="%s" _name="%s" version="1.0">' % (sid, html.escape(name)))
+    L.append('<style-scheme id="%s" name="%s" version="1.0">' % (sid, html.escape(name)))
     L.append('  <author>rainglow (Dayle Rees), converted for l3afpad</author>')
-    L.append('  <_description>%s (rainglow)</_description>' % html.escape(name))
+    L.append('  <description>%s (rainglow)</description>' % html.escape(name))
     L.append('')
     L.append(style("text", fg=fg, bg=bg))
     L.append(style("selection", bg=sel))

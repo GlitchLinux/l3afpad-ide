@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-shrek" _name="Shrek" version="1.0">
+<style-scheme id="rainglow-shrek" name="Shrek" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Shrek (rainglow)</_description>
+  <description>Shrek (rainglow)</description>
 
     <style name="text" foreground="#ffffff" background="#222222"/>
     <style name="selection" background="#857a5e"/>

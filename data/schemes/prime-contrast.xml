@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-prime-contrast" _name="Prime Contrast" version="1.0">
+<style-scheme id="rainglow-prime-contrast" name="Prime Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Prime Contrast (rainglow)</_description>
+  <description>Prime Contrast (rainglow)</description>
 
     <style name="text" foreground="#9090b2" background="#0b0b11"/>
     <style name="selection" background="#ee4266"/>

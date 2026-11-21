@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-rebellion-contrast" _name="Rebellion Contrast" version="1.0">
+<style-scheme id="rainglow-rebellion-contrast" name="Rebellion Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Rebellion Contrast (rainglow)</_description>
+  <description>Rebellion Contrast (rainglow)</description>
 
     <style name="text" foreground="#d6c7ab" background="#0c0c09"/>
     <style name="selection" background="#fe5f00"/>

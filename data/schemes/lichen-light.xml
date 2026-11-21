@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-lichen-light" _name="Lichen Light" version="1.0">
+<style-scheme id="rainglow-lichen-light" name="Lichen Light" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Lichen Light (rainglow)</_description>
+  <description>Lichen Light (rainglow)</description>
 
     <style name="text" foreground="#414549" background="#e6e9ed"/>
     <style name="selection" background="#1a9d6b"/>

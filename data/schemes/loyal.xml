@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-loyal" _name="Loyal" version="1.0">
+<style-scheme id="rainglow-loyal" name="Loyal" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Loyal (rainglow)</_description>
+  <description>Loyal (rainglow)</description>
 
     <style name="text" foreground="#bbb1c9" background="#413e4f"/>
     <style name="selection" background="#3cbbb1"/>

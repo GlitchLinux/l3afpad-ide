@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-glance-light" _name="Glance Light" version="1.0">
+<style-scheme id="rainglow-glance-light" name="Glance Light" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Glance Light (rainglow)</_description>
+  <description>Glance Light (rainglow)</description>
 
     <style name="text" foreground="#2d3142" background="#ffffff"/>
     <style name="selection" background="#ef8354"/>

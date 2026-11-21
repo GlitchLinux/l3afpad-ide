@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-hive-contrast" _name="Hive Contrast" version="1.0">
+<style-scheme id="rainglow-hive-contrast" name="Hive Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Hive Contrast (rainglow)</_description>
+  <description>Hive Contrast (rainglow)</description>
 
     <style name="text" foreground="#ffffff" background="#0f1016"/>
     <style name="selection" background="#7cb8ba"/>

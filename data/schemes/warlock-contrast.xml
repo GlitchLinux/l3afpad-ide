@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-warlock-contrast" _name="Warlock Contrast" version="1.0">
+<style-scheme id="rainglow-warlock-contrast" name="Warlock Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Warlock Contrast (rainglow)</_description>
+  <description>Warlock Contrast (rainglow)</description>
 
     <style name="text" foreground="#ffffff" background="#171123"/>
     <style name="selection" background="#725ac1"/>

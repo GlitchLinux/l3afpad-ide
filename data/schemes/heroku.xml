@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-heroku" _name="Heroku" version="1.0">
+<style-scheme id="rainglow-heroku" name="Heroku" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Heroku (rainglow)</_description>
+  <description>Heroku (rainglow)</description>
 
     <style name="text" foreground="#c8c7d5" background="#1b1b24"/>
     <style name="selection" background="#7873ae"/>

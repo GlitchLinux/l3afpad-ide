@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-legacy" _name="Legacy" version="1.0">
+<style-scheme id="rainglow-legacy" name="Legacy" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Legacy (rainglow)</_description>
+  <description>Legacy (rainglow)</description>
 
     <style name="text" foreground="#aec2e0" background="#212933"/>
     <style name="selection" background="#ff410d"/>

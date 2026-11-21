@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-turnip-light" _name="Turnip Light" version="1.0">
+<style-scheme id="rainglow-turnip-light" name="Turnip Light" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Turnip Light (rainglow)</_description>
+  <description>Turnip Light (rainglow)</description>
 
     <style name="text" foreground="#444444" background="#ffffff"/>
     <style name="selection" background="#487d76"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-carbonight-light" _name="Carbonight Light" version="1.0">
+<style-scheme id="rainglow-carbonight-light" name="Carbonight Light" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Carbonight Light (rainglow)</_description>
+  <description>Carbonight Light (rainglow)</description>
 
     <style name="text" foreground="#2e2c2b" background="#ffffff"/>
     <style name="selection" background="#8c8c8c"/>

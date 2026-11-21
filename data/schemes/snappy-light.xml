@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-snappy-light" _name="Snappy Light" version="1.0">
+<style-scheme id="rainglow-snappy-light" name="Snappy Light" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Snappy Light (rainglow)</_description>
+  <description>Snappy Light (rainglow)</description>
 
     <style name="text" foreground="#555555" background="#ffffff"/>
     <style name="selection" background="#808dd3"/>

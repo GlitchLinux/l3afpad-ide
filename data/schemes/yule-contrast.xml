@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-yule-contrast" _name="Yule Contrast" version="1.0">
+<style-scheme id="rainglow-yule-contrast" name="Yule Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Yule Contrast (rainglow)</_description>
+  <description>Yule Contrast (rainglow)</description>
 
     <style name="text" foreground="#ede0ce" background="#0c0c0b"/>
     <style name="selection" background="#d63131"/>

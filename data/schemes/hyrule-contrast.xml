@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-hyrule-contrast" _name="Hyrule Contrast" version="1.0">
+<style-scheme id="rainglow-hyrule-contrast" name="Hyrule Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Hyrule Contrast (rainglow)</_description>
+  <description>Hyrule Contrast (rainglow)</description>
 
     <style name="text" foreground="#c0d5c1" background="#0c0c0c"/>
     <style name="selection" background="#569e16"/>

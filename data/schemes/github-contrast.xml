@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-github-contrast" _name="Github Contrast" version="1.0">
+<style-scheme id="rainglow-github-contrast" name="Github Contrast" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Github Contrast (rainglow)</_description>
+  <description>Github Contrast (rainglow)</description>
 
     <style name="text" foreground="#ffffff" background="#111111"/>
     <style name="selection" background="#008080"/>

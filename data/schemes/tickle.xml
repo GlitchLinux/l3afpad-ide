@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-tickle" _name="Tickle" version="1.0">
+<style-scheme id="rainglow-tickle" name="Tickle" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Tickle (rainglow)</_description>
+  <description>Tickle (rainglow)</description>
 
     <style name="text" foreground="#c1c1c1" background="#39393a"/>
     <style name="selection" background="#ffffff"/>

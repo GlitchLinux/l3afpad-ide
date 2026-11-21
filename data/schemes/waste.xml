@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="rainglow-waste" _name="Waste" version="1.0">
+<style-scheme id="rainglow-waste" name="Waste" version="1.0">
   <author>rainglow (Dayle Rees), converted for l3afpad</author>
-  <_description>Waste (rainglow)</_description>
+  <description>Waste (rainglow)</description>
 
     <style name="text" foreground="#b1c7cc" background="#1b353a"/>
     <style name="selection" background="#43bdb2"/>
